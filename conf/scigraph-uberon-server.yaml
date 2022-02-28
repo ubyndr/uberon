@@ -1,0 +1,25 @@
+server:
+  type: simple
+  applicationContextPath: /scigraph
+  adminContextPath: /admin
+  connector:
+    type: http
+    port: 9000
+
+logging:
+  level: INFO
+
+graphConfiguration:
+  location: target/uberonGraph
+  curies:
+    'UBERON' : 'http://purl.obolibrary.org/obo/UBERON_'
+    'RO' : 'http://purl.obolibrary.org/obo/RO_'
+    'BFO' : 'http://purl.obolibrary.org/obo/BFO_'
+  indexedNodeProperties:
+    - category
+    - label
+    - fragment
+  exactNodeProperties:
+    - label
+    - synonym
+

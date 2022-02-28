@@ -1,0 +1,68 @@
+EMAPA:16115 ! blood island	UBERON:0003304 ! mesoderm blood island	__n/a__	?
+EMAPA:16115 ! blood island	UBERON:0011919 ! yolk sac blood island	__n/a__	?
+EMAPA:16133 ! pericardium	UBERON:0002407 ! pericardium	__n/a__	Y
+EMAPA:16133 ! pericardium	UBERON:0007188 ! mesothelium of serous pericardium	__n/a__	N
+EMAPA:16139 ! peritoneum	UBERON:0001179 ! peritoneal cavity	__n/a__	https://github.com/obophenotype/uberon/issues/86
+EMAPA:16139 ! peritoneum	UBERON:0001366 ! parietal peritoneum	__n/a__	https://github.com/obophenotype/uberon/issues/86
+EMAPA:16139 ! peritoneum	UBERON:0005669 ! peritoneal cavity mesothelium	__n/a__	https://github.com/obophenotype/uberon/issues/86
+EMAPA:16276 ! 2nd branchial pouch endoderm	UBERON:0005664 ! 2nd arch endoderm	__n/a__	N
+EMAPA:16276 ! 2nd branchial pouch endoderm	UBERON:0007123 ! pharyngeal pouch 2	__n/a__	Y
+EMAPA:16291 ! rhombomere 01 floor plate	UBERON:0003310 ! floor plate of metencephalon	__n/a__	N
+EMAPA:16291 ! rhombomere 01 floor plate	UBERON:0005566 ! rhombomere 1 floor plate	__n/a__	Y
+EMAPA:16294 ! rhombomere 02 floor plate	UBERON:0003310 ! floor plate of metencephalon	__n/a__	N
+EMAPA:16294 ! rhombomere 02 floor plate	UBERON:0005570 ! rhombomere 2 floor plate	__n/a__	Y
+EMAPA:16483 ! rhombomere 01 roof plate	UBERON:0003302 ! roof plate of metencephalon	__n/a__	N
+EMAPA:16483 ! rhombomere 01 roof plate	UBERON:0005568 ! rhombomere 1 roof plate	__n/a__	Y
+EMAPA:16564 ! foregut-midgut junction epithelium	UBERON:0003350 ! epithelium of mucosa	__n/a__	N
+EMAPA:16564 ! foregut-midgut junction epithelium	UBERON:0009497 ! epithelium of foregut-midgut junction	__n/a__	Y
+EMAPA:16589 ! visceral pericardium	UBERON:0002425 ! visceral serous pericardium	__n/a__	https://github.com/obophenotype/uberon/issues/86
+EMAPA:16589 ! visceral pericardium	UBERON:0007186 ! pericardial visceral mesothelium	__n/a__	https://github.com/obophenotype/uberon/issues/86
+EMAPA:16678 ! optic stalk	UBERON:0001908 ! optic tract	MA:0001099 ! optic tract	is this transformation of?
+EMAPA:16678 ! optic stalk	UBERON:0003098 ! optic stalk	__n/a__	Y
+EMAPA:16762 ! 4th branchial groove ectoderm	UBERON:0005662 ! 4th arch ectoderm	__n/a__	N
+EMAPA:16762 ! 4th branchial groove ectoderm	UBERON:0005875 ! 4th arch pharyngeal cleft	__n/a__	Y
+EMAPA:16775 ! pleura	UBERON:0000977 ! pleura	__n/a__	Y
+EMAPA:16775 ! pleura	UBERON:0003390 ! mesothelium of pleural cavity	__n/a__	N see also https://github.com/obophenotype/uberon/issues/86
+EMAPA:17298 ! posterior semicircular canal epithelium	UBERON:0003239 ! epithelium of posterior semicircular canal	__n/a__	Y
+EMAPA:17298 ! posterior semicircular canal epithelium	UBERON:0003241 ! epithelium of utricle	__n/a__	N
+EMAPA:17301 ! superior semicircular canal epithelium	UBERON:0003238 ! epithelium of superior semicircular canal	__n/a__	Y
+EMAPA:17301 ! superior semicircular canal epithelium	UBERON:0003241 ! epithelium of utricle	__n/a__	N
+EMAPA:17339 ! left ventricle cardiac muscle	UBERON:0003382 ! cardiac muscle of left ventricle	__n/a__	Y
+EMAPA:17339 ! left ventricle cardiac muscle	UBERON:0006566 ! left ventricle myocardium	MA:0002983 ! left ventricle myocardium	Not all myocardium is muscle tissue? See notes for ubr class
+EMAPA:17342 ! right ventricle cardiac muscle	UBERON:0003381 ! cardiac muscle of right ventricle	__n/a__	Y
+EMAPA:17342 ! right ventricle cardiac muscle	UBERON:0006567 ! right ventricle myocardium	MA:0002984 ! right ventricle myocardium	See above
+EMAPA:17596 ! otic capsule	UBERON:0005410 ! cartilaginous otic capsule	__n/a__	TRANSFORMATION_OF but check when it ossifies
+EMAPA:17596 ! otic capsule	UBERON:0005411 ! bony otic capsule	MA:0000252 ! otic capsule	TRANSFORMATION_OF but check when it ossifies
+EMAPA:17681 ! chondrocranium	UBERON:0001703 ! neurocranium	MA:0000317 ! chondrocranium	REVIEW
+EMAPA:17681 ! chondrocranium	UBERON:0002241 ! chondrocranium	__n/a__	REVIEW
+EMAPA:17748 ! pectoral girdle and thoracic body wall muscle	UBERON:0002426 ! chest muscle	MA:0000548 ! chest muscle	Not quite equiv?
+EMAPA:17748 ! pectoral girdle and thoracic body wall muscle	UBERON:0008196 ! muscle of pectoral girdle	__n/a__	N
+EMAPA:17748 ! pectoral girdle and thoracic body wall muscle	UBERON:0008713 ! pectoral girdle and thoracic body wall skeletal muscle	__n/a__	Y
+EMAPA:17823 ! lateral semicircular canal epithelium	UBERON:0003240 ! epithelium of lateral semicircular canal	__n/a__	Y
+EMAPA:17823 ! lateral semicircular canal epithelium	UBERON:0003241 ! epithelium of utricle	__n/a__	N
+EMAPA:18025 ! pectoral girdle and thoracic body wall skeleton	UBERON:0003459 ! chest bone	MA:0000547 ! chest bone	?See above
+EMAPA:18025 ! pectoral girdle and thoracic body wall skeleton	UBERON:0007831 ! pectoral girdle skeleton	__n/a__	?Dont think so
+EMAPA:18577 ! sciatic nerve	UBERON:0001322 ! sciatic nerve	MA:0001172 ! sciatic nerve	Y
+EMAPA:18577 ! sciatic nerve	UBERON:0002004 ! trunk of sciatic nerve	MA:0001178 ! sciatic nerve trunk	N - FIX IN MA
+EMAPA:18606 ! descending aorta	UBERON:0001514 ! descending aorta	__n/a__	Y
+EMAPA:18606 ! descending aorta	UBERON:0005805 ! dorsal aorta	__n/a__	N
+EMAPA:18606 ! descending aorta	UBERON:0010190 ! pair of dorsal aortae	MA:0000476 ! dorsal aorta	REVIEW
+EMAPA:19133 ! tarsus	UBERON:0009879 ! tarsal skeleton	MA:0000050 ! tarsus	Y
+EMAPA:19133 ! tarsus	UBERON:0010695 ! mesenchyme of tarsal region	__n/a__	N (note this isn't a transformation_of scenario, as mesenchyme also becomes muscle)
+EMAPA:28393 ! distal convoluted tubule	UBERON:0001292 ! distal convoluted tubule	MA:0001666 ! distal convoluted tubule	TRANSFORMATION_OF
+EMAPA:28393 ! distal convoluted tubule	UBERON:0005101 ! early distal convoluted tubule	__n/a__	TRANSFORMATION_OF - but do we need to distinguish in uberon?
+EMAPA:28393 ! distal convoluted tubule	UBERON:0005102 ! late distal convoluted tubule	__n/a__	TRANSFORMATION_OF - but do we need to distinguish in uberon?
+EMAPA:29794 ! anterior prostate gland	UBERON:0001329 ! prostate gland anterior lobe	MA:0002422 ! prostate gland anterior lobe	Y
+EMAPA:29794 ! anterior prostate gland	UBERON:0008807 ! coagulating gland	__n/a__	N - FIX DEF IN UBERON (and ncit?) see http://ratguide.com/breeding/anatomy/male_reproductive_system.php
+EMAPA:30763 ! ovary tertiary follicle	UBERON:0000036 ! secondary ovarian follicle	MA:0002909 ! ovary antral follicle	N - I think antral is considered 3rd but confusing, see https://sourceforge.net/p/geneontology/ontology-requests/11601/
+EMAPA:30763 ! ovary tertiary follicle	UBERON:0000037 ! tertiary ovarian follicle	__n/a__	Y - see above
+EMAPA:30997 ! muscular layer of vagina	UBERON:0004223 ! vagina smooth muscle	MA:0001733 ! vagina smooth muscle	LAYER-VS-TISSUE-DISTINCTION
+EMAPA:30997 ! muscular layer of vagina	UBERON:0006652 ! muscular layer of vagina	__n/a__	LAYER-VS-TISSUE-DISTINCTION
+EMAPA:32730 ! cartilage	UBERON:0002418 ! cartilage tissue	MA:0000104 ! cartilage tissue	Y
+EMAPA:32730 ! cartilage	UBERON:0007844 ! cartilage element	__n/a__	N - arbitrary but let's go with this
+EMAPA:35133 ! anterior ventral thalamic nucleus	UBERON:0002637 ! ventral anterior nucleus	__n/a__	N - but worth reviewing these
+EMAPA:35133 ! anterior ventral thalamic nucleus	UBERON:0002685 ! anteroventral nucleus of thalamus	__n/a__	Y - but worth reviewing these
+EMAPA:35313 ! entorhinal cortex	UBERON:0002728 ! entorhinal cortex	MA:0003117 ! entorhinal cortex	REVIEW
+EMAPA:35313 ! entorhinal cortex	UBERON:0002895 ! secondary olfactory cortex	MA:0003117 ! entorhinal cortex	REVIEW
+EMAPA:35505 ! long bone epiphyseal plate	UBERON:0002516 ! epiphyseal plate	MA:0002839 ! long bone epiphyseal plate	Y
+EMAPA:35505 ! long bone epiphyseal plate	UBERON:0006861 ! diaphysis proper	MA:0002803 ! long bone diaphysis	N - FIX IN MA. Also review 'diaphysis' vs proper.

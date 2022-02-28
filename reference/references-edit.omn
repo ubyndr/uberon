@@ -1,0 +1,2712 @@
+Prefix: dc: <http://purl.org/dc/elements/1.1/>
+Prefix: obo: <http://purl.obolibrary.org/obo/>
+Prefix: ubref: <http://purl.obolibrary.org/obo/uberon/refont/>
+Prefix: owl: <http://www.w3.org/2002/07/owl#>
+Prefix: rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+Prefix: url: <http://www.w3.org/2000/01/rdf-schema#seeAlso>
+Prefix: xml: <http://www.w3.org/XML/1998/namespace>
+Prefix: xsd: <http://www.w3.org/2001/XMLSchema#>
+Prefix: body: <http://purl.org/dc/elements/1.1/description>
+Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+Prefix: year: <http://purl.org/dc/elements/1.1/date>
+Prefix: title: <http://purl.org/dc/elements/1.1/title>
+Prefix: source: <http://purl.org/dc/elements/1.1/source>
+Prefix: creator: <http://purl.org/dc/elements/1.1/creator>
+Prefix: minipub: <http://purl.org/dc/elements/1.1/resource>
+Prefix: abstract: <http://purl.org/dc/elements/1.1/abstract>
+Prefix: pso: <http://purl.org/spar/pso/>
+Prefix: ice: <http://purl.obolibrary.org/obo/IAO_0000030>
+
+Ontology: <http://purl.obolibrary.org/obo/uberon/references/references.owl>
+  Annotations: 
+        dc:title "Uberon ontology documentation"^^xsd:string,
+        dc:creator "Chris Mungall"^^xsd:string
+
+AnnotationProperty: ubref:superseded_by
+
+
+AnnotationProperty: ubref:has_status
+
+Class: <http://purl.org/spar/pso/Status>
+
+    Annotations: 
+        rdfs:comment "A state or condition that a document may have."@en,
+        rdfs:label "status"@en
+
+Individual: <http://purl.org/spar/pso/initial-draft>
+
+    Annotations: 
+        rdfs:label "initial draft"@en,
+        rdfs:comment "The status of pre-publication material (for example a document or a dataset) when in its initial stage of development."@en
+    
+    Types: 
+        <http://purl.org/spar/pso/Status>
+
+Individual: <http://purl.org/spar/pso/final-draft>
+
+    Annotations: 
+        rdfs:label "final draft"@en,
+        rdfs:comment "The status of pre-publication material (for example a document or a dataset) when in the authors' opinion it has been brought to a stage of development that renders it suitable for publication."@en
+    
+    Types: 
+        <http://purl.org/spar/pso/Status>
+
+Individual: <http://purl.org/spar/pso/peer-reviewed>
+
+    Annotations: 
+        rdfs:seeAlso <http://purl.org/spar/pso/reviewed>,
+        rdfs:label "peer reviewed"@en,
+        rdfs:comment "The status of a publication, typically a scholarly journal article, that has been peer reviewed, i.e. subjected to review by two or more independent reviewers (also know as referees) who are academic peers of the author(s), and judged by them to be of sufficient quality to merit publication, usually after further revision by the author to incorporate the reviewers' suggested modifications and improvements."@en
+    
+    Types: 
+        <http://purl.org/spar/pso/Status>
+
+Individual: <http://purl.org/spar/pso/intermediate-draft>
+
+    Annotations: 
+        rdfs:comment "The status of pre-publication material (for example a document or a dataset) part-way through its development."@en,
+        rdfs:label "intermediate draft"@en
+    
+    Types: 
+        <http://purl.org/spar/pso/Status>
+
+
+Individual: <http://purl.org/spar/pso/withdrawn-from-submission>
+
+    Annotations: 
+        rdfs:comment "The status of material (for example a pre-publication document or dataset) that has been voluntarily withdrawn by the author from a previous status of having been submitted for publication, perhaps because the revision demands requested by the peer-reviewers were considered impossible to achieve, or because the author wishes to submit it for publication elsewhere."@en,
+        rdfs:label "withdrawn from submission"@en
+    
+    Types: 
+        <http://purl.org/spar/pso/Status>
+
+Individual: <http://purl.org/spar/pso/reviewed>
+
+    Annotations: 
+        rdfs:label "reviewed"@en,
+        rdfs:seeAlso <http://purl.org/spar/pso/peer-reviewed>,
+        rdfs:comment "The status of a publication, for example a book, that has been subjected to a written review and critical analysis of its content, scope and quality."@en
+    
+    Types: 
+        <http://purl.org/spar/pso/Status>
+
+Individual: <http://purl.org/spar/pso/under-review>
+
+    Annotations: 
+        rdfs:comment "The status of a document that has been received from the author(s) by an editor or a publisher for potential publication, and then has been sent to independent reviewers for their comments as to its suitability for publication, prior to receipt of such reviews."@en,
+        rdfs:label "under review"@en
+    
+    Types: 
+        <http://purl.org/spar/pso/Status>
+
+AnnotationProperty: dc:creator
+
+
+AnnotationProperty: dc:contributor
+
+    
+AnnotationProperty: rdfs:seeAlso
+
+    
+AnnotationProperty: dc:abstract
+
+
+AnnotationProperty: dc:source
+
+
+AnnotationProperty: dc:subject
+
+    
+AnnotationProperty: dc:date
+
+    
+AnnotationProperty: rdfs:label
+
+    
+AnnotationProperty: dc:description
+
+    
+AnnotationProperty: dc:title
+
+    
+Datatype: xsd:anyURI
+
+    
+Datatype: xsd:int
+
+    
+Datatype: xsd:string
+
+    
+Class: ice:
+ Annotations: rdfs:label "information content entity"@en
+
+Class: ubref:ontology_documentation
+ Annotations: rdfs:label "ontology documentation"@en,
+        dc:description "Documentation describing an ontology or some aspect of an ontology"
+ SubClassOf: ice:
+
+Class: ubref:ontology_design_pattern
+    Annotations: 
+        rdfs:label "ontology design pattern"@en,
+        dc:description "A template or design pattern that is repeated multiple kinds",
+        rdfs:seeAlso "http://www.springerlink.com/content/d2lp476v0p281q73/"^^xsd:anyURI
+  SubClassOf: ubref:ontology_documentation
+
+Class: ubref:description_of_a_meeting
+ Annotations: rdfs:label "description of a meeting"@en,
+        dc:description "Some combination of: a meeting report, meeting minutes or a description of the outcomes of a meeting"
+  SubClassOf: ubref:ontology_documentation
+
+Class: ubref:spreadsheet_documentation
+ Annotations: rdfs:label "spreadsheet documentation"@en,
+        dc:description "A description of and link to a spreadsheet that contains domain knowledge in tabular form"
+  SubClassOf: ubref:ontology_documentation
+
+Class: ubref:metadata_description
+ Annotations: rdfs:label "metadata description"@en,
+        dc:description "Documentation describing the metadata or metadata best practices used in an ontology"
+  SubClassOf: ubref:ontology_documentation
+
+Class: ubref:biological_modeling
+ Annotations: rdfs:label "biological modeling"@en,
+        dc:description "Documentation describing how a specific piece of biology is represented in the ontology"
+  SubClassOf: ubref:ontology_documentation
+
+Class: ubref:ontology_usage_article
+ Annotations: rdfs:label "ontology usage article"@en,
+        dc:description "Documentation describing how a particular piece of the ontology is intended to be used"
+  SubClassOf: ubref:ontology_documentation
+
+
+Individual: <http://purl.obolibrary.org/obo/uberon/references/reference_0000000>
+
+    Annotations:
+        ubref:has_status <http://purl.org/spar/pso/intermediate-draft>,
+        dc:date "2012"^^xsd:int,
+        dc:creator "Chris Mungall"^^xsd:string,
+        dc:title "UDoc - the Uberon documentation system"^^xsd:string,
+        rdfs:label "UDoc - the Uberon documentation system"^^xsd:string,
+        ubref:superseded_by <http://purl.obolibrary.org/obo/uberon/docs/About-documentation>,
+        dc:description "
+## Summary
+
+This article describes the inline documentation system used by
+Uberon. The article is itself a component of the system.
+
+## Background
+
+Documentation is essential for ontology development. yet there is no
+standard way to document an ontology. In addition, there is a tendency
+for external documentation (wiki pages, web pages, etc) to drift from
+the ontology.
+
+## Embedded documentation
+
+This ontology aims to be as self-documenting as possible. In addition
+to the standard metadata associated with each class, we embed articles
+in the ontology. These articles may describe abstract design patterns
+or templates that are repeated throughout the ontology, or the
+modeling of a particular piece of biology (e.g. the heart). Some
+articles are of interest to users of the ontology, as they describe in
+more detail the system being represented and why it was represented in
+a particular way. Other articles may be solely for the developers of
+the ontology.
+
+## Model
+
+Each article is represented as an individual, and gets a unique
+URI. For example, the URI for this article is
+[http://purl.obolibrary.org/obo/uberon/references/reference_0000000](http://purl.obolibrary.org/obo/uberon/references/reference_0000000).
+
+Each article is then adorned with metadata, using properties from
+vocabularies such as dublin core. The text of the article is
+represented using dc:description with a string value. The text is
+authored using a variant of markdown syntax, which can then be
+translated to html.
+
+Each article is of a specific type. The categories used include:
+
+ * ontology documentation
+  * biological modeling
+  * ontology design pattern
+  * metadata documentation
+
+Currently the documentation system assumes a flat hierarchy and
+assertions to leaf nodes. The vocabulary used for the above is not yet
+stable.
+
+Any properties can be used, but the recommended set is:
+
+ * dc:date (1) (currently the year as an int, for historic reasons)
+ * dc:creator (1 or more) - the main author(s)
+ * dc:contributor (0 or more)
+ * dc:title (1, required)
+ * dc:abstract (1, required)
+ * dc:description (1, required) in markdown format
+ * rdfs:seeAlso (0 or more) - links to other related articles or resources
+
+The publishing status ontology (pso) is used to give each article a
+status such as 'initial-draft'
+
+## Connecting articles to ontology elements
+
+Each article can be references multiple times in the main ontology, in
+different ways.
+
+Sometimes a class may point to an article - for example, if an
+ontology class implements a certain design pattern or template
+described in an article, then a 'implements design pattern' annotation
+property connects the two.
+
+Sometimes it may be more appropriate to link an axiom annotation to an
+article.
+
+## Referencing external sources
+
+It is not always appropriate to cram everything into a single article
+that is embedded in the ontology. The seeAlso property can be used to
+connect out to googledocs, spreadsheets, ontogenesis articles,
+textbooks, etc.
+
+## Viewing articles
+
+Articles can be viewed when references.owl is loaded alongside the
+main ontology in the ontology editing environment, but this is not
+appropriate for everyone.
+
+Each article can be viewed on the web via its purl
+
+## Guidelines for authors
+
+Ontology editors should edit the file references-edit.omn [in
+git](https://github.com/cmungall/uberon/tree/master/reference) - any
+new articles created should be in their idrange - see
+uberonref-idranges.owl.
+
+The file can be edited in a text editor (the recommended text editor
+emacs plus Phil Lord's omn-mode.el, plus ubref-helper.el). Note that
+the author should be adept in manchester notation.
+
+The prefered route is to open the articles ontology in Protege,
+navigating to the 'individuals by type' tab (insert image here).
+
+![Screenshot](images/udoc-in-p4.png)
+
+In both cases, the main text should go in the dc:description tab using
+markdown format. Note that hashes should be used for headings rather
+than underlines.
+
+The format used is a variant called ontology markdown. Class labels
+can be written in backtics - the derived documentation will make PURL
+links from these (*to be implemented*).
+
+In general each article type should follow a certain template (to be
+documented).
+
+The ontology release manager will generate the derived documentation
+from this file.
+
+## Implementation
+
+The current implementation is somewhat ad-hoc and may be replaced.
+
+The references-edit.omn is translated to an rdf/owl ontology -
+[references.owl](http://purl.obolibrary.org/obo/uberon/references.owl)
+
+A perl script (owldoc2md.pl) generates individual markdown (.md) files
+from this owl file (using a to-be-released API). It assumes some of
+the annotation properties listed above are used.
+
+Each markdown file is then converted to an html file using pandoc.
+
+The html file has the same name as the localname of the URI. It is
+committed to svn, and the svn property svn:mime-type is set to
+text/html
+
+## Acknowledgments
+
+This system was inspired by Matt Brush's REO documentation system
+developed at OHSU, and by David Osumi-Sutherland's org-mode system, as
+well as by Phil Lord's articles on ontology documentation and applying
+literate programming ideas to ontologies.
+
+"^^xsd:string
+
+    Types:
+        ubref:metadata_description
+
+
+Individual: <http://purl.obolibrary.org/obo/uberon/references/reference_0000030>
+
+    Annotations:
+        dc:date "2012"^^xsd:int,
+        dc:creator "Chris Mungall"^^xsd:string,
+        dc:contributor "Heiko Dietze"^^xsd:string,
+        dc:title "Continuous integration"^^xsd:string,
+        rdfs:label "Continuous integration"^^xsd:string,
+        rdfs:seeAlso "http://bio-ontologies.knowledgeblog.org/405"^^xsd:anyURI,
+        rdfs:seeAlso "http://build.berkeleybop.org/job/build-uberon/"^^xsd:anyURI,
+        ubref:superseded_by <http://purl.obolibrary.org/obo/uberon/docs/Continuous-integration>,
+
+        dc:abstract "
+
+In software engineering, continuous integration (CI) implements
+continuous processes of applying quality control - small pieces of
+effort, applied frequently. The same techniques can be applied to
+ontology engineering - this is especially important for integrative
+ontologies, where changes in one ontology can have effects on other
+ontologies.
+
+"^^xsd:string,
+
+        dc:description "
+
+## Background
+
+Classes in Uberon subsume classes in species-specific anatomy
+ontologies. In addition, Uberon is interconnected with other
+ontologies such as CL, GO and phenotype ontologies. These ontologies
+are developed in an asynchronous manner by different distributed
+groups. With this type of development, there is the possibility of
+inconsistencies arising between ontologies.
+
+Integration tests verify that two or more ontologies are compatible -
+i.e. combining them in an import chain together with bridging axioms
+does not produce any unsatisfiable classes. For example, if MA were to
+accidentally place 'styloopod' as a part of a forelimb, a reasoner
+would find an unsatisfiable class in the integrated ontology set,
+because in uberon fore and hindlimbs are spatially disjoint.
+
+Integration tests can be time consuming to debug and resolve. The
+software engineering principle of Continuous Integration (CI) holds
+that integration tests should be done as far upstream as possible in
+the development cycle. This means problems can be detected and
+resolved immediately, rather than building up over time.
+
+## The OBO-Jenkins CI system
+
+The [OBO CI system](http://build.berkeleybop.org/) uses the Jenkins CI
+server to perform integration tests over multiple OBO ontologies.
+
+The system consists of a set of jobs, each performing a particular set
+of tests. These jobs are typically triggered by a commit to a Version
+Control System (VCS) such as SVN.
+
+For example, whenever an Uberon editor commits to the core github
+repository, the
+[build-uberon](http://build.berkeleybop.org/job/build-uberon/) job is
+queued. This job executes a number of scripts and runs Oort to perform
+a build. If a problem is found, Jenkins will email the committer.
+
+In addition, cross-anatomy builds are triggered whenever an external
+AO commits (currently just ZFA, MA and EHDAA2). This checks that the
+union of Uberon and this AO plus bridging axioms is satisfiable.
+
+### Jobs
+
+The following Jobs involve Uberon:
+
+ * [build-uberon](http://build.berkeleybop.org/job/build-uberon/)
+ * [build-go-xp-uberon](http://build.berkeleybop.org/job/build-go-xp-uberon/)
+ * [check-uberon-ehdaa2](http://build.berkeleybop.org/job/check-uberon-ehdaa2/)
+ * [check-uberon-ma](http://build.berkeleybop.org/job/check-uberon-ma/)
+ * [check-uberon-zfa](http://build.berkeleybop.org/job/check-uberon-zfa/)
+ * [build-phenoscape](http://build.berkeleybop.org/job/build-phenoscape/)
+
+## Future developments
+
+Currently Jenkins is only used as a verification step for Uberon - the
+build process requires multiple steps governed by a complex Makefile,
+the components of which are currently being migrated to Jenkins.
+
+In the future we intend to add additional cross-species Jobs.
+
+"^^xsd:string
+
+    Types:
+        ubref:metadata_description
+
+
+Individual: <http://purl.obolibrary.org/obo/uberon/references/reference_0000032>
+
+    Annotations:
+        dc:date "2012"^^xsd:int,
+        dc:creator "Chris Mungall"^^xsd:string,
+        dc:title "Automatic inference of part_of relationships"^^xsd:string,
+        rdfs:label "Automatic inference of part_of relationships"^^xsd:string,
+        dc:abstract "..."^^xsd:string,
+        ubref:superseded_by <http://purl.obolibrary.org/obo/uberon/docs/Inferring-part-of-relationships>,
+        dc:description "
+
+Level of difficulty: advanced
+
+## Problem
+
+Given
+
+ * `metaphysis of femur` EquivalentTo `metaphysis` and part_of some `femur`
+ * `diaphysis of femur` EquivalentTo `diaphysis` and part_of some `femur`
+ * `metaphysis` SubClassOf part_of some `diaphysis`
+
+It might seem that we should be able to infer:
+
+ * `metaphysis of femur` SubClassOf part_of some `diaphysis of femur`
+
+But this is not the case, for good reason. The reasoner will infer
+that a femur metaphysis is both part of a diaphysis and part of a
+femur, but it cannot rule out that this diaphysis and this femur are
+only partially overlapping.
+
+## OWL Solution
+
+We can get the axioms we want by adding additional general axioms:
+
+ * (part_of some `diaphysis` and part_of some `femur`) SubClassOf part_of some `diaphysis of femur`
+
+This is not highly intuitive for ontology developers
+
+## Heuristic Solution (current)
+
+We instead opt for a *heuristic* solution. We have a rule that has the antecedents:
+
+ * X EquivalentTo  PX and part_of some W
+ * Y EquivalentTo  PY and part_of some W
+ * PX SubClassOf part_of some PY
+
+And consequents:
+
+ * X SubClassOf part_of some Y
+
+Note that this rule is *not safe*. However, they can form the basis of
+suggestions which can be implemented by the ontology editor.
+
+## Alternate Solutions (future)
+
+We might want to automatically generate axioms of this form:
+
+ * (part_of some `diaphysis` and part_of some `femur`) SubClassOf part_of some `diaphysis of femur`
+
+Using rules; for example:
+
+IF
+
+ * P SubClassOf `zone of long bone`
+ * W SubClassOf `long bone`
+
+THEN generate:
+
+ *  (part_of some P and part_of some W) SubClassOf part_of some (P and part_of some W)
+
+
+
+"^^xsd:string
+
+    Types:
+        ubref:ontology_design_pattern
+
+
+Individual: <http://purl.obolibrary.org/obo/uberon/references/reference_0000034>
+
+    Annotations:
+        dc:date "2012"^^xsd:int,
+        dc:creator "Chris Mungall"^^xsd:string,
+        dc:title "Digestive tract"^^xsd:string,
+        rdfs:label "Digestive tract"^^xsd:string,
+        dc:abstract "..."^^xsd:string,
+        ubref:superseded_by <http://purl.obolibrary.org/obo/uberon/docs/The-digestive-tract>,
+        dc:description "
+
+## Digestive Tract
+
+We follow Kardong in defining the digestive tract as a tube extending
+from mouth to anus. We use this definition across bilateria.
+
+Note that various other terms are used for other divisions or parts of
+the digestive system, for example
+
+ * alimentary tract - in Kardong, the portion of the DT after the pharynx
+ * digestive system - DT plus various organs
+ * gut - ambiguous term, sometimes synonymous with DT, sometimes intestines
+
+Reference: Kardong, fig 13.1
+
+## Subdivisions of the digestive tract
+
+Like any tube, the DT can be subdivided along its main axis, which we
+call the proximal-distal axis (terminology may vary across species;
+e.g. in some metazoans the terms oral-aboral may be used)
+
+Multiple overlapping subdivisions may exist. 
+
+A standard list of divisions order proximal-distal for vertebrates is
+
+ * `mouth`
+ * `pharynx`
+ * `esophagus`
+ * `stomach`
+ * `intestine`
+
+Note that some subdivisions may simultaneously be considered organs
+and tube subdivisions.
+
+Note that the the same 4 terms may also be used in non-chordates for
+analagous structures. We tend to reserve these labels for vertebrates,
+and use functional grouping classes such as `food storage organ`.
+
+There are variations and subdivisions of this scheme in vertebrates;
+e.g. the esophageal structures of avians; the stomachs of ruminants;
+divisions of the intestine in mammals. See Kardong for details.
+
+A 'combined' vertebrate pattern may be
+
+ * `mouth`
+ * `pharynx`
+  * `nasopharynx`
+  * `oropharynx`
+  * `hypopharynx`
+ * `esophagus` (may have: crop)
+ * `stomach` (may have: proventriculus, gizzard, multiple 'sub-stomachs'; absent in species such as zebrafish)
+ * `intestine`
+  * `small intestine`
+   * `duodenum`
+   * `jejunum`
+   * `ileum`
+  * `large intestine`
+   * `colon`
+   * `rectum`
+
+Note we treat the caecum as a diverticulum and not a true section of the DT
+
+## Anatomy of a digestive tract subdivision
+
+The DT can be subdivided along a proximal-distal axis. Each
+subdivision will typically have similar parts. Minimally: a wall, and
+a lumen, bounded by the wall.
+
+We use the class `subdivision of digestive tract` for any section of
+the tube, including the wall and lumen.
+
+In vertebrates the a subdivision typically contains:
+
+ * `mucosa`
+  * `epithelium`
+  * `lamina propria` (lamina propria mucosae)
+  * `muscularis mucosa` (lamina muscularis mucosae, lamina muscularis) - smooth
+ * `submucosa`
+ * `muscularis propria` (muscular coat, muscle/ular layer, muscularis externa) - typically smooth
+  * `circular muscle`
+  * `longitudinal muscle`
+ * `serosa` or `adventita`
+
+Glands may occur in the mucosa, submucosa or outside the walls
+
+Sometimes it is also useful to create a class 'smooth muscle of
+X'. Note that this may encompass both muscularis mucosa and the
+non-adjacent muscular coat - although in some sections, such as the
+esophagus, this is skeletal muscle. At the time of writing, some parts
+of the ontology may need to be verified for consistency - in some
+cases, smooth muscle may be bundled together with the muscularis
+propria
+
+## Ends of the digestive tract
+
+In metazoans, the DT is typically open at both ends - the mouth and
+the anus.
+
+We attempt to clearly distinguish between the opening itself (an
+orifice or aperture), the terminal portion of the tube (which
+encompasses the opening an extends along the tube some distance), and
+the lumen of that terminal portion. Terminology is often quite loose
+here.
+
+For the proximal section we have:
+
+ * `oral opening` - orifice
+ * `mouth` - terminal subdivision
+ * `oral cavity` - lumen of mouth, aka buccal cavity
+
+We propose that these classes can be used across metazoans. In
+vertebrates the mouth typically contains tongue, teeth, etc, and
+extends to the pharynx.
+
+There is some inconsistency in various anatomy ontologies as to the
+extent of the mouth. See section on AOs below
+
+For the distal section we have:
+
+ * `anus` - orifice
+ * `terminal part of digestive tract`
+ * `lumen of terminal part of digestive tract`
+
+We propose that these classes are also used across metazoans.
+
+The term 'rectum' may sometimes be used as a synonym for the terminal
+portion, but in vertebrates it used more specifically for the terminal
+portion of the large intestine, which is not necessarily the terminal
+portion of the DT when a cloacal chamber is present.
+
+### Cloacal chambers
+
+We use the term `cloaca` to refer exclusively to the chamber present
+in many mostly non-mammalian vertebrates into which the digestive and
+urogenital system empties.
+
+The cloaca may be considered part of the DT, but it is also part of
+the genitourinary system. In vertebrates with a cloaca, we consider
+the rectum to be the terminal part of the intestine, emptying into the
+cloacal chamber.
+
+Note that in vertebrates the anus is considere to be the opening at
+the end of the rectum. If the DT is considered to extend past the
+rectum and include the cloaca and the cloacal opening, then the anus
+is no longer the end of the DT. For simplicity we may consider the DT
+proper to end with the rectum/anus in vertebrates, and the cloaca to
+be a hindgut derivative that is not part of the DT proper, but still
+part of the digestive system (and urogenital and excretory
+system). TBD.
+
+Mammals have an embryonic cloaca.
+
+## Embryonic subdivisions
+
+One subdivision of the gut is as follows
+
+ * `foregut`
+ * `midgut`
+ * `hindgut`
+
+These are defined very generally for bilateria. For vertebrates,
+standard borders are used. See ontology for details.
+
+## Diverticula and derived structures
+
+Some structures start as diverticula of the embryonic DT. We consider
+these to be not part of the DT, but they may still be part of the
+digestive system. Different subdivisions apply for systems.
+
+## Inconsistencies amongst various anatomy ontologies
+
+### Mouth and oral region
+
+MA has distinct classes for mouth an oral region, with the following
+parts:
+
+ * tonsil: O 
+ * tongue: O
+ * oral epithlium: O
+ * soft palate: O
+ * salivary gland: O, M
+ * oral region cartilage bone: O, M
+ * tooth: O, M
+ * gingiva: O, M
+ * oral mucosa: M
+ * lip: M
+ * palate: M
+
+We merge these in Uberon
+
+In FMA, the mouth contains salivary glands, dentition, lips, mucosa,
+soft palate.
+
+EHDAA2 has no class 'mouth', but 'oral region' corresponds to mouth
+
+The tongue and the palate are considered part of the face in FMA (as
+well as part of the mouth)
+
+
+"^^xsd:string
+
+    Types:
+        ubref:ontology_design_pattern
+
+
+Individual: <http://purl.obolibrary.org/obo/uberon/references/reference_0000035>
+
+    Annotations:
+        dc:date "2012"^^xsd:int,
+        dc:creator "Chris Mungall"^^xsd:string,
+        dc:title "Conflation and Discrimination"^^xsd:string,
+        rdfs:label "Conflation and Discrimination"^^xsd:string,
+        dc:abstract "..."^^xsd:string,
+        ubref:superseded_by <http://purl.obolibrary.org/obo/uberon/docs/Conflation-vs-discrimination-Design-Pattern>,
+        dc:description "
+
+Ontology builders are often confronted with situations in which they
+have to decide whether to model a piece of biology using a single
+concept vs breaking that concept into ontologically distinct classes.
+
+For example, in the brain, neural nuclei cluster into complexes. The
+ontology designer is faced with a decision as to whether to represent
+this using distinct classes for the nuclei and the complex, or whether
+to bundle them into one. We call the former 'de-conflation' and the
+latter 'conflation'.
+
+The choice is often determined by what the ontology is to be used
+for. To support basic indexing, search and gene expression queries,
+conflation is a good strategy because it lessens the complexity of the
+ontology with few negative results for querying.
+
+However, excessive conflation can lead to problems when axiomtizing
+the ontology for reasoning, or when integrating the ontology with
+other ontologies.
+
+The problem is especially apparent when an ad-hoc mixing of conflation
+and de-conflation is used. This leads to situations where subclass and
+part-of are interchanged arbitrarily.
+
+## Principle
+
+The general principle in Uberon is to be cautiously
+de-conflationary. The idea is that it is easier to automatically
+conflate distinct related concepts (for the purposes of queries, etc)
+than it is to automatically de-conflate a conflated concept. At the
+same time, care must be taken to avoid the ontology inflation that
+comes with de-conflation
+
+When de-conflation is used, we make sure relations are available that
+connect the de-conflated classes.
+
+The most important principle to be consistent in the strategy used,
+and to be clear as to what a class represents.
+
+## Relations
+
+### The composed_primarily_of relation
+
+## Patterns
+
+### Cells vs simple tissues
+
+Examples:
+
+ * epithelium vs epithelial cell
+ * skeletal muscle cell vs skeletal muscle tissue
+
+Solution:
+
+We always de-conflate here, with the cell type represented in CL. For
+simple tissues, we use logical definitions of the form:
+
+ * 'X tissue' EquivalentTo tissue and composed_primarily_of some X
+
+### Lumens and cavities vs cavitated structures
+
+Examples:
+
+ * ventricles - spaces or structures?
+
+### Skeletal subdivisions vs organism subdivisions
+
+Examples:
+
+ * hand vs skeleton of hand
+ * head vs skull
+ * digit vs digit skeleton
+
+(see reference_0000003 for more on this topic)
+
+Solution:
+
+We always de-conflate here, as these are distinct classes.
+
+In addition, we always try and mirror subdivisions, even though this
+leads to ontology inflation.
+
+### Skeletal subdivisions vs bones
+
+Examples:
+
+ * `bone of hand` vs `skeleton of hand`
+ * 
+
+### Muscles and musculature
+
+### Vessels and vasculature
+
+### Neural nuclei
+
+## Tools
+
+De-conflation in the ontology can make the ontology harder to use for
+simple search and querying. For certain kinds of queries it is
+irrelevant whether a phenotypes affect an X vessel or X vasculature.
+
+"^^xsd:string
+
+    Types:
+        ubref:ontology_design_pattern
+    
+
+Individual: <http://purl.obolibrary.org/obo/uberon/references/reference_0000036>
+
+    Annotations:
+        dc:date "2012"^^xsd:int,
+        dc:creator "Chris Mungall"^^xsd:string,
+        dc:contributor "Frederic Bastian"^^xsd:string,
+        dc:contributor "Melissa Haendel"^^xsd:string,
+        dc:contributor "Fabian Neuhaus"^^xsd:string,
+        dc:contributor "David Osumi-Sutherland"^^xsd:string,
+        dc:title "Developmental stages"^^xsd:string,
+        rdfs:label "Developmental stages"^^xsd:string,
+        dc:abstract "..."^^xsd:string,
+        ubref:superseded_by <http://purl.obolibrary.org/obo/uberon/docs/Modeling-developmental-stages>,
+        dc:description "
+
+This document describes how developmental and life cycle stages are
+represented in Uberon. It is intended for users, ontology developers,
+and contributing ontologies.
+
+## Distinction between stages and anatomical structures
+
+We have two disjoint hierarchies for stages and structures. This has
+certain consequences that are not ideal for everyone. For example, we
+have distinct classes for `larva` and `larva stage` - other
+ontologies may conflate these.
+
+There is also an increase in the number of relationship types used.
+
+To avoid confusion we use strict terminological rules, with all stage
+classes having a label such as 'X stage', corresponding to a
+whole-organism structure called 'X'.
+
+## Distinction between stages and GO biological processes
+
+We treat these as distinct, although both are subtypes of bfo
+'occurrents'. Again this can seem to lead to an increase in the number
+of terms, as we have both 'gastrulation' (GO) and 'gastrula stage'
+(Uberon). These are linked by the coincides_with relation.
+
+## Relationship types
+
+We use a variety of relationship types for connecting stages to
+eachother, and for connecting stages to structures. These relations
+are based on work by Fabian Neuhaus and David Osumi-Sutherland and
+will be described in more detail in a subsequent publication. A brief
+overview is provided here.
+
+Stages are subdivided using the part_of relation. Each stage always
+has at least one subclass axiom (isa parent). This is typically to the
+parent `life cycle stage`.
+
+Stages are ordered in succession via the preceded_by relation (MAY
+CHANGE TO starts_at_end_of). Note the distinction between direct and
+transitive precedence. An adult stage is always preceded by an
+embryonic stage, but it need not be *directly* preceded by this stage.
+
+## Core generic classes
+
+### Broad subdivisions
+
+The core distinction is between embryonic stages and post-embryonic
+stages. In some animals there are other stages such as larval.
+
+### Early embryonic stages
+
+The early development stages in Uberon are taken from BILA and
+describe a typical sequence of development found across metazoa, up
+until gastrulation
+
+### Embryo vs fetus
+
+TODO - Documentation will be added here later
+
+### Post-natal stages
+
+Uberon uses sexual maturoty as the core developmental landmark. This
+leads to a slight disjunction between terminology applied to humans
+and other animals. We are working on the best way to resolve these.
+
+### Late adult stages and sensescence
+
+TODO - Documentation will be added here later
+
+We may use the NIFSTD subdivisions developed by Bill Bug here, but
+this may better be treated in a dedidcated human staging ontology
+
+## Species-specific stages
+
+As a general rules, Uberon leaves species-specific classes to
+dedicated species ontologies. The ontologies together form a
+federation, which can be consumed either via composite or importer
+ontologies (see ADD LINK HERE).
+
+Staging schemes are typically devised for a specific species (and
+often a stereotypical member of that species), and thus fall outside
+the purview of Uberon core. We provide some rules for species anatomy
+developers to assist the federation process.
+
+### Federation guidelines
+
+In order of preferences, stage ontologies should:
+
+ * be logically consistent with core uberon generic stages	
+ * use identifiers that are conformant to OBO guidelines
+ * isa-complete
+ * uses isa vs part_of in the correct way
+ * be openly released at a reasonable frequence, and be resposibe to reasonable requests
+ * uses intermediate subdivisions where appropriate (ie isn't a flat list)
+ * uses preceded_by relationships to create a temporal ordering - this should be a total order on the leaf nodes
+ * use standard naming conventions
+ * names stages such that they won't be confused with corresponding structures (e.g. 'embryo stage' vs embryo)
+ * includes numeric timing info using OWL datatypes (e.g. has_day 23^^xsd:int)
+
+Currently it is difficult to federate mammalian staging ontologies, we
+are working on solutions here.
+
+### Alternate staging schemes for a single species
+
+There may be more than one overlapping staging scheme for an
+organism. Currently these are not represented in Uberon, or in any of
+the federated ontologies. If there is demand for these, we would be
+willing to work with federated ontologies in capturing this knowledge.
+
+### Mapping inter-species-specific staging schemes
+
+As mentioned previously, staging schemes are species specific. Even
+within the mammals, once gastrulation is over we do not break down the
+embryonic stage into more refined pan-mammalian stages.
+
+It may be possible to align Carnegie stages and Thelier stages at a
+higher level of granularity. We have no immediate plans to do this,
+but users interested in an automated approach to this should consult
+Aitken at el (TODO: PMID).
+
+## Structure-specific staging
+
+Staging schemes can be applied to anatomical structures as well as the
+whole organism - for example, limb staging. It is not clear the
+situations where this helps, given that we may already have the
+structures themselves subtypes (e.g. limb bud vs limb) and the
+devlopmental processes may be described in GO. The GO cell cycle
+subset can also be considered to be redundant with a staging ontology
+for cell types.
+
+Currently (Jan 2013) we do not have non-life cycle stages in Uberon,
+but this may change in the future.
+
+The FBdv ontology contains some good examples of stages for anatomical
+structures.
+
+## Stage subset
+
+The stages in uberon are available as a separate subset ontology
+(TODO: add link)
+
+## Provenance
+
+The backbone of the Uberon staging system was lifted directly from
+BILA. Future development was done in collaboration with the Bgee
+group. We also made use of the XUO ontology developed by Stuart
+Aitken.
+
+"^^xsd:string
+
+    Types:
+        ubref:ontology_design_pattern
+ 
+Individual: <http://purl.obolibrary.org/obo/uberon/references/reference_0000024>
+
+    Annotations:
+        ubref:has_status <http://purl.org/spar/pso/intermediate-draft>,
+        dc:date "2012"^^xsd:int,
+        dc:creator "Chris Mungall"^^xsd:string,
+        dc:title "Connections between biological processes and anatomical structures"^^xsd:string,
+         dc:abstract "..."^^xsd:string,
+        rdfs:seeAlso "http://www.ncbi.nlm.nih.gov/pubmed/20152934"^^xsd:anyURI,
+        rdfs:seeAlso "http://douroucouli.wordpress.com/2012/07/04/querying-for-connections-between-the-go-and-fma/"^^xsd:anyURI,
+        rdfs:seeAlso "http://purl.obolibrary.org/obo/go/extensions/x-metazoan-anatomy.owl"^^xsd:anyURI,
+        ubref:superseded_by <http://purl.obolibrary.org/obo/uberon/docs/Connecting-processes-to-anatomy>,
+        
+        dc:description "
+
+## Background
+
+Uberon covers anatomical structures such as glands, bones, blood
+vessels. The Gene Ontology covers molecular and biological processes,
+as well as cellular component. These processes include for example
+lung development, respiration, secretion, angiogenesis.
+
+Processes are disjoint with anatomic structures, yet they are clearly
+related. This article covers how these are related
+
+## Inter-ontology axioms
+
+An inter-ontology axiom connects two classes from different
+ontologies. An axiom must belong to an ontology, the 'owner' of an
+axiom is determined by which class the axiom is about.
+
+An axiom such as 'lungs have a function in respiration' are about
+lungs - these axioms are found in Uberon. Conversely, an axiom such as
+'lung development results in the development of a lung' is about the
+process, so this axiom belongs to the GO.
+
+Some axioms such as 'anatomical projections (sometimes known as
+processes) are not the same thing as biological processes' are
+symmetric, and belong to neither
+
+## Axioms about processes that reference anatomical structures
+
+These belong to the GO, but are currently housed in an external
+bridging ontology:
+
+ * http://purl.obolibrary.org/obo/go/extensions/x-metazoan-anatomy.owl
+
+This ontology contains *only* bridging axioms. A separate ontology imports the necessary ontologies
+
+ * http://purl.obolibrary.org/obo/go/extensions/x-metazoan-anatomy-importer.owl
+
+## Axioms about metazoan anatomical structures that reference processes
+
+These belong to Uberon. They are only available in some versions of
+Uberon
+
+"^^xsd:string
+
+    Types:
+        ubref:ontology_usage_article
+ 
+Individual: <http://purl.obolibrary.org/obo/uberon/references/reference_0000021>
+
+    Annotations:
+        ubref:has_status <http://purl.org/spar/pso/intermediate-draft>,
+        dc:date "2012"^^xsd:int,
+        dc:creator "Chris Mungall"^^xsd:string,
+        dc:title "Depictions of anatomical structures"^^xsd:string,
+        rdfs:seeAlso "http://douroucouli.wordpress.com/2012/07/03/45/"^^xsd:anyURI,
+        rdfs:seeAlso "http://purl.obolibrary.org/obo/uberon/depictions.owl"^^xsd:anyURI,
+        rdfs:seeAlso "https://github.com/balhoff/image-depictions-view"^^xsd:anyURI,
+        dc:abstract "Ontologies can be greatly enriched by including exemplar images. This article shows how images are associated with classes in the ontology."^^xsd:string,
+        ubref:superseded_by <http://purl.obolibrary.org/obo/uberon/docs/Class-depictions>,
+        dc:description "
+
+## Model
+
+Each image is represented as an OWL individual, the IRI of which
+resolves to an image on the web - for example [this
+one](http://purl.obolibrary.org/obo/uberon/images/lamprey_sucker_rosava_3238889218.jpg).
+
+This individual is of type 'depicts some FOO', where FOO is the class representing the anatomical structure being depicted
+
+Class expressions can also be used to provide additional
+information. For example 'depicts some (mouth and part_of some
+Petromyzontidae)' or 'depicts some (mouth and has_quality open)'
+
+## Editors guide
+
+Any OWL extension on uberon can include as many depictions as is required.
+
+The core ontology does not yet include any direct depiction axioms -
+however, there is a hack such that any xref to a jpg or png is
+translated to depiction axioms in a separate ontology called
+depictions.owl.
+
+Eventually the depiction axioms will be represented directly in the main ontology
+
+## Viewing in Protege
+
+Use the [Image depictions view](https://github.com/balhoff/image-depictions-view) plugin.
+
+![Screenshot](http://douroucouli.files.wordpress.com/2012/07/mouth.jpg)
+
+## Viewing on the web
+
+Currently the depictions are not easily viewed on the web, but
+hopefully future versions of OntoBee will support this.
+
+## Future work
+
+Currently each image has no metadata other than what structure it
+depicts (possibly including species). In future we will categorize the
+images (e.g. sketches vs iconic/cartoon representations vs
+photographs). We will also make use of other properties, including:
+
+ * dc:title
+ * dc:rights
+ * dc:creator
+ * scale
+ * microscopy vocabulary properties (for microscope images)
+
+"^^xsd:string
+
+    Types:
+        ubref:metadata_description
+
+Individual: <http://purl.obolibrary.org/obo/uberon/references/reference_0000022>
+
+    Annotations:
+        ubref:has_status <http://purl.org/spar/pso/intermediate-draft>,
+        dc:date "2012"^^xsd:int,
+        dc:creator "Chris Mungall"^^xsd:string,
+        dc:contributor "Jen Deegan"^^xsd:string,
+        dc:title "Taxon constraints"^^xsd:string,
+        rdfs:label "Taxon constraints"^^xsd:string,
+        rdfs:seeAlso "http://douroucouli.wordpress.com/2012/04/24/taxon-constraints-in-owl/"^^xsd:anyURI,
+        rdfs:seeAlso "https://doi.org/10.1016/j.jbi.2007.07.007"^^xsd:anyURI,
+        rdfs:seeAlso "http://www.biomedcentral.com/1471-2105/11/530"^^xsd:anyURI,
+        rdfs:seeAlso "http://genomebiology.com/2012/13/1/R5"^^xsd:anyURI,
+        rdfs:seeAlso <http://purl.obolibrary.org/obo/uberon/references/reference_0000023>,
+        dc:abstract "Confusion over naming and homology can lead to errors when developing or using multi-species ontologies. The addition of taxon constraints in OWL can eliminate certain kinds of errors"^^xsd:string,
+        ubref:superseded_by <http://purl.obolibrary.org/obo/uberon/docs/Taxon-constraints>,
+        dc:description "
+
+## Model
+
+We use two properties
+
+ * [only_in_taxon](http://purl.obolibrary.org/obo/RO_0002160)
+ * [never_in_taxon](http://purl.obolibrary.org/obo/RO_0002161)
+ * present_in_taxon (present in at least one member of this taxon)
+
+These are expanded to [in_taxon](http://purl.obolibrary.org/obo/RO_0002162) axioms
+
+## Usage
+
+Often we can never be sure when a structure evolved, when it
+disappears, or when a structure that fits the same definition
+convergently evolves. Taxon constraints are not intended to convey
+precise sometimes controversial hypotheses - rather they convey
+conservative, relatively uncontroversial 'common knowledge' that is
+useful for error checking and building taxon modules.
+
+## Use of NCBI taxonomy ontology
+
+The main ontology translation of NCBITaxonomy equates taxa with
+classes whose instances are organisms. The taxon constraints follow
+this model.
+
+The NCBI taxonomy may not be precise enough for precise evolutionary
+hypotheses, but it should be sufficient for the kinds of broad taxon
+constraints useful for error checking.
+
+## Reference structures and variants
+
+Taxon constraints should be understood to refer to reference members
+of species. For example, 'digit 6 never_in_taxon Homo sapiens' is a
+valid taxon constraint despire the presence of polydactlyous humans.
+
+"^^xsd:string
+
+    Types:
+        ubref:ontology_design_pattern
+ 
+
+Individual: <http://purl.obolibrary.org/obo/uberon/references/reference_0000023>
+
+    Annotations:
+        ubref:has_status <http://purl.org/spar/pso/initial-draft>,
+        dc:date "2012"^^xsd:int,
+        dc:creator "Chris Mungall"^^xsd:string,
+        dc:title "Evolutionary variability and general class axioms"^^xsd:string,
+        dc:abstract "Multi-species ontologies may be axiomatically weaker than dedicated species ontologies, as all statements in an ontology must be universal. Here we describe how axioms can be scoped to a particular species or taxon using OWL general axioms"^^xsd:string,
+        rdfs:seeAlso "http://genomebiology.com/2012/13/1/R5"^^xsd:anyURI,
+        ubref:superseded_by <http://purl.obolibrary.org/obo/uberon/docs/Evolutionary-variability-GCIs>,
+        dc:description "
+
+This is also described in the section 'Managing taxonomic variation' in the [Uberon paper](http://genomebiology.com/2012/13/1/R5).
+
+## Problem
+
+Frequently we are confronted with situations where we want to make a
+statement such as 'A REL some B', but this statement doesn't
+universally hold for all instances of A, as A encompasses structures
+present in a variety of taxa that vary in properties such as
+developmental lineage.
+
+One possibility is to make subclasses of A and attach the axiom to
+those subclasses. For example, we can make subclasses of a generic
+eye, such as `camera-type eye' or `compound eye`, and attach
+relationships to these. However, this approach can lead to ontology
+inflation where the subclasses are trivially distinguished.
+
+## Solution
+
+Our solution here is to use general class axioms (aka General Class
+Inclusion axioms, or GCIs). This is logically equivalent to creating
+the subclass, but we use an OWL class expression in place of a named
+class:
+
+```
+   (A and part_of some TAXON-CLASS) SubClassOf REL some B
+```
+
+So if we want to make a statement that the adenohypophysis develops
+from Rathke's pouch in tetrapods, we would say:
+
+```
+  (adenohypophysis and part_of some Tetrapoda) SubClassOf develops_from some 'Rathkes pouch'
+```
+
+Note that we do not need to taxonomically scope the target class.
+
+## Examplar Class
+
+See [thymus primordium](http://purl.obolibrary.org/obo/UBERON_0005562)
+as an example (note: GCIs may not be visible in OntoBee).
+
+This contains all the taxon-specific developmental relationships from
+table 13.1 of Kardong
+
+## OBO-Format implementation
+
+OBO format has a very limited form of GCI support, but this is
+sufficient for taxon GCIs. In obo-format we would write:
+
+```
+   id: A
+   relationship: REL B {gci_relation=part_of, gci_filler=NCBITaxon:nnnn}
+```
+
+This is provided as an authoring convenience. These relationships
+should be removed from obo-basic versions of the ontology, as they can
+possibly confuse some obo tools.
+
+"^^xsd:string
+
+    Types:
+        ubref:ontology_design_pattern
+ 
+
+Individual: <http://purl.obolibrary.org/obo/uberon/references/reference_0000019>
+
+    Annotations:
+        ubref:has_status <http://purl.org/spar/pso/initial-draft>,
+        dc:date "2012"^^xsd:int,
+        dc:contributor "Nizar Ibrahim"^^xsd:string,
+        dc:contributor "Chris Mungall"^^xsd:string,
+        dc:title "Autopod subdivisions"^^xsd:string,
+        rdfs:seeAlso "https://docs.google.com/a/usd.edu/document/d/1l7pOCO6X5tsC7bnbevKurBx72qQu8HnlTk23CRFYI3o/edit"^^xsd:anyURI,
+        dc:abstract "..."^^xsd:string,
+        ubref:superseded_by <http://purl.obolibrary.org/obo/uberon/docs/Subdivisions-of-the-autopod>,
+        dc:description "
+
+We consider the autopod as consisting of 3 segments, divided according to the following jointly-exhaustive mutually-disjoint part-hierarchy, listed distal to proximal
+
+  * `skeleton of autopod`    (aka 'autopod')
+      * `skeleton of acropodium` (aka 'acropodium')
+      * `metapodium skeleton`    (aka 'metapodium')
+      * `mesopodium skeleton`    (aka 'mesopodium')
+
+Note that in this document and in the ontology we currently use the unambiguous skeletal-prefixed terms, and phenoscape-preferred terms in parentheses.
+
+Hoever, it is also possible to first group the acropodium and metapodium - confusingly, this is sometimes called the acropodium (e.g. Wagner and Chin 2001).
+We accomodate this group, and introduce a new label 'digitopodium' (Ibrahim and Sereno) to group the proximal-most two elements
+
+This gives us a second hierarchy (also part-wise JEPD):
+
+  * `skeleton of autopod`    (aka 'autopod')
+      * `skeleton of digitopodium` (aka 'digitopodium', 'acropodium (Wagner)')
+          * `skeleton of acropodium` (aka 'acropodium')
+          * `metapodium skeleton`    (aka 'metapodium')
+      * `mesopodium skeleton`    (aka 'mesopodium')
+
+This second hierarchy is consistent with the first, but includes an additional mereological sum for grouping purposes
+
+"^^xsd:string
+
+    Types:
+        ubref:biological_modeling
+ 
+Individual: <http://purl.obolibrary.org/obo/uberon/references/reference_0000018>
+
+    Annotations:
+        ubref:has_status <http://purl.org/spar/pso/intermediate-draft>,
+        dc:date "2012"^^xsd:int,
+        dc:creator "Chris Mungall"^^xsd:string,
+        dc:title "Part-disjointness"^^xsd:string,
+        rdfs:label "Part-disjointness"^^xsd:string,
+        rdfs:seeAlso "http://ontogenesis.knowledgeblog.org/1260"^^xsd:anyURI,
+        rdfs:seeAlso "http://ontogenesis.knowledgeblog.org/1288"^^xsd:anyURI,
+        rdfs:seeAlso "https://doi.org/doi:10.1038/npre.2011.5292.2"^^xsd:anyURI,
+        rdfs:seeAlso "https://docs.google.com/document/d/1cPWBqrl_Qy7XHEWFqtR_PgQX61yRkgGuLaiDpnEXxkE/edit#heading=h.cx8lslfjfyrl"^^xsd:anyURI,
+        dc:abstract "A crucial part of anatomical knowledge concerns spatial disjointness. This article covers the concept of part-disjointness and how it is applied in Uberon"^^xsd:string,
+        ubref:superseded_by <http://purl.obolibrary.org/obo/uberon/docs/Part-disjointness-Design-Pattern>,
+        dc:description "
+
+## Problem
+
+In anatomy ontologies, it can be useful to state that two parts are
+non-overlapping - they contain no parts in common. For example, we may
+want to model the limb such that the autopod, zeugopod and stylopod
+are spatially adjacent and have no parts in common (this does not mean
+that structures cannot overlap both).
+
+## Disjointness axioms in OWL
+
+In OWL, the statement ```X DisjointWith Y``` refers to the *classes* X
+and Y - it means there is nothing that instantiates both an X and a Y.
+
+This means the following statements are anatomically *correct*:
+
+ 1. `manus` DisjointWith `forelimb`
+ 2. `brain` DisjointWith `spinal cord`
+
+It also means that the following axioms do *not* lead to an inconsistency:
+
+ 3. `manus` DisjointWith `forelimb zeugopod`
+ 4. foo SubClassOf part_of some `manus`
+ 5. foo SubClassOf part_of some `forelimb zeugopod` 
+
+This sometimes causes confusion, as users unfamiliar with OWL read
+`disjoint` as being *spatially* disjoint, which is not the case. Axiom
+(3) above states that nothing is both a manus and a forelimb
+zeugopod. It does *not* restrict how other entities relate to these
+classes via properties such as part_of.
+
+## Part-disjointness in OWL
+
+We can in fact make statements of parthood-disjointness in OWL using
+General Class Inclusion (GCI) axioms, for example:
+
+  6. (part_of some `manus`) DisjointWith (part_of some `forelimb zeugopod`)
+
+This states that there is nothing that is both part of a manus and
+part of a forelimb zeugopod. This can be written in an equivalent way:
+
+  7. (part_of some `manus`) and (part_of some `forelimb zeugopod`) EquivalentTo owl:Nothing
+
+Using either (6) or (7) in conjunction with (4) and (5) leads to 'foo'
+being unsatisfiable.
+
+## Implementation in OBO-Format
+
+Note that GCIs cannot be *directly* authored in obo-format, but we can
+specify them indirectly, by means of a *shortcut* relation:
+
+```
+  [Typedef]
+  id: spatially_disjoint_from
+  expand_assertion_to: \"Class: <http://www.w3.org/2002/07/owl#Nothing> EquivalentTo: (BFO_0000050 some ?X) and (BFO_0000050 some ?Y)\" []
+  is_metadata_tag: true
+  is_class_level: true
+```
+
+This means the ontology can contain 'silent' annotation assertions of the form:
+
+```
+  Class: `manus`
+   Annotations: spatially_disjoint_from `forelimb zeugopod`
+```
+
+(which are written in obo-format using the relationship tag)
+
+An extra step in the obo to owl conversion process will expand this to the correct OWL axiom.
+
+## A note on reflexivity
+
+Note that in classic mereology, the parthood relation is considered
+reflexive. This means that a statement:
+
+ * (part_of some X) DisjointWith (part_of some Y)
+
+necessarily entails 'X DisjointWith Y' (as well as 'X DisjointWith
+part_of some Y' and its reciprocal).
+
+However, working with reflexivity axioms poses some problems (outside
+the scope of this document, but briefly: global reflexivity axioms are
+too strong and cannot be used in conjunction with domain/range
+constraints; local reflexivity axioms of the form continuant
+SubClassOf part_of SELF should be used; also, fast reasoners such as
+Elk may not support these constructs, at least at the time of writing,
+and Uberon is heavily dependent on Elk for fast checking).
+
+One possible approach to get around this limitation: generate a
+supplementary ontology with axioms of the form 'X part_of some X';
+this could be hidden from the user, but imported as part of the
+Jenkins QC pipeline to check for spatial disjointness errors.
+
+
+"^^xsd:string
+
+    Types:
+        ubref:ontology_design_pattern
+ 
+
+Individual: <http://purl.obolibrary.org/obo/uberon/references/reference_0000017>
+
+    Annotations:
+        ubref:has_status <http://purl.org/spar/pso/intermediate-draft>,
+        dc:date "2012"^^xsd:int,
+        dc:creator "Chris Mungall"^^xsd:string,
+        dc:title "Multiple inheritance in Uberon"^^xsd:string,
+        rdfs:label "Multiple inheritance in Uberon"^^xsd:string,
+        rdfs:seeAlso "http://ontogenesis.knowledgeblog.org/49"^^xsd:anyURI,
+        rdfs:seeAlso "http://odps.sourceforge.net/odp/html/Normalisation.html"^^xsd:anyURI,
+        dc:abstract "This article describes the practical approach taken in Uberon to avoid asserted multiple inheritance, and documents where exceptions are made to standard normalization practice"^^xsd:string,
+        ubref:superseded_by <http://purl.obolibrary.org/obo/uberon/docs/Multiple-inheritance>,
+        dc:description "
+
+It is good practice to avoid *asserted* multiple inheritance in
+ontology development. Instead, classes should have a single asserted
+superclass or an equivalence axioms containing a single named class
+(the 'genus') plus one or more additional clauses (the 'differentiae').
+
+In addition, if the full practice of normalization is being followed,
+then the asserted parent hierarchy should be jointly-exhaustive and
+pairwise disjoint.
+
+If ontology develops follow this methodology, then their ontologies
+become easier to maintain
+
+Uberon follows this methodology, but not dogmatically. Exceptions are
+made in various circumastances:
+
+1. If the exact normalization strategy has not yet been decided, then we
+deem it acceptable to delay normalization and assert multiple parents.
+
+2. Many of the axioms in this ontology are annotated with provenance
+information. The goal is to eventually have detailed evidence and
+provenance information for all axioms. In general it is preferable
+that this information is attached to non-subclass
+relationships. However, in cases where another ontology has a subclass
+axiom that can be generalized to Uberon, it is most straightforard to
+represent this as a subclass axiom with a provenance note pointing
+back to the source ontology. This can lead to multiple superclass
+assertions - in some cases, one will be redundant with another, but we
+want to retain both as there is separate evidence for both. In other
+cases, the parents will be non-disjoint classes with distinct evidence
+for both.
+
+Over time, there will be less of a need for asserted multiple
+parentage, but the current strategy is only to eliminate multiple
+inheritance where it helps with ontology maintenance.
+
+Note that the *inferred* hierarchy of this ontology is very
+lattice-like due to grouping classes and inferred multiple
+inheritance. This can be problematic for some visualization tools. Our
+strategy here is to provide means of extracting subsets of the
+ontology that exclude these grouping classes, but this is considered a
+separate issue to asserted multiple inheritance.
+
+"^^xsd:string
+
+    Types:
+        ubref:ontology_design_pattern
+ 
+Individual: <http://purl.obolibrary.org/obo/uberon/references/reference_0000016>
+
+    Annotations:
+        ubref:has_status <http://purl.org/spar/pso/intermediate-draft>,
+        dc:date "2012"^^xsd:int,
+        dc:creator "Chris Mungall"^^xsd:string,
+        dc:title "Inter-ontology disjointness axioms"^^xsd:string,
+        rdfs:label "Inter-ontology disjointness axioms"^^xsd:string,
+        rdfs:seeAlso "http://purl.obolibrary.org/obo/uberon/external-disjoints.owl"^^xsd:anyURI,
+        rdfs:seeAlso "http://ontogenesis.knowledgeblog.org/1260"^^xsd:anyURI,
+        dc:abstract "..."^^xsd:string,
+        ubref:superseded_by <http://purl.obolibrary.org/obo/uberon/docs/Inter-ontology-disjointness-Design-Pattern>,
+        dc:description "
+
+Uberon contains explicit disjointness axioms between Uberon classes and classes in external ontologies.
+
+For example:
+
+ * `neck of organ` DisjointWith MA:`neck organ`
+ * `hypodermis` DisjointWith WBbt:`hypodermis`
+
+These axioms can be used by humans and computers to avoid accidentally
+falsely equating distinct structures based on nomenclature. In many
+cases these exioms are redundant with more general disjointness axioms
+within the ontology, but are still retained as a separate explicit
+confirmation of disjointness.
+
+Note that in OWL, DisjointWith refers purely to *class* disjointness,
+not spatial disjointness.
+
+
+"^^xsd:string
+
+    Types:
+        ubref:ontology_design_pattern
+ 
+    
+Individual: <http://purl.obolibrary.org/obo/uberon/references/reference_0000009>
+
+    Annotations: 
+        dc:creator "Chris Mungall"^^xsd:string,
+        rdfs:label "Representing individual endochondral elements"^^xsd:string,
+        ubref:has_status <http://purl.org/spar/pso/intermediate-draft>,
+        dc:date "2012"^^xsd:int,
+        dc:title "Representing individual endochondral elements"^^xsd:string,
+        dc:creator "Melissa Haendel"^^xsd:string,
+        dc:abstract "TODO"^^xsd:string,
+        dc:creator "Wasila Dahdul"^^xsd:string,
+        ubref:superseded_by <http://purl.obolibrary.org/obo/uberon/docs/Modeling-endochondral-elements-Design-Pattern>,
+        dc:description "Preamble:
+
+Early draft to demonstrate markdown embedded in ontology.
+
+## Template
+
+Classes representing individual endochondral elements should *typically* conform to the following hierarchy:
+
+ * X element
+     * X bone
+     * X cartilage
+     * X pre-cartilage condensation
+
+Not all classes need be materialized in the ontology.
+
+Where classes are materialized, the following axioms should be created:
+
+ * 'X cartilage condensation' SubClassOf  develops_from some 'X pre-cartilage condensation'
+ * 'X bone' SubClassOf develops_from some 'X cartilage condensation'
+
+The ontology should contain the axiom:
+
+ * 'endochondral bone' EquivalentTo bone and develops_from some 'cartilage condensation'
+
+This means that there is no need for assertion under endochondral bone
+
+## Exceptions
+
+ * There need not be a 1:1 correspondence between a bone and it's cartilage precursor
+
+## Open questions
+
+ * Should there be a 4th subclass for elements whose end-state is cartilage; these are past the condensation stage
+ * Is develops_from appropriate? Depends how definition relations to cells
+ * Should classes for ossification centers be materialized? If so, how does this relate to the above
+ * Mixed endochondral/membrane bones"^^xsd:string
+    
+    Types: 
+        ubref:ontology_design_pattern
+
+Individual: <http://purl.obolibrary.org/obo/uberon/references/reference_0000010>
+
+    Annotations: 
+        dc:creator "Chris Mungall"^^xsd:string,
+        dc:source "Kardong"^^xsd:string,
+        ubref:has_status <http://purl.org/spar/pso/initial-draft>,
+        dc:date "2012"^^xsd:int,
+        dc:title "Extraembryonic membranes"^^xsd:string,
+        dc:abstract "..."^^xsd:string,
+        ubref:superseded_by <http://purl.obolibrary.org/obo/uberon/docs/Modeling-extraembryonic-membranes>,
+        dc:description "
+
+Table 5.4 from Kardong:
+
+    | Group      | `Amnion`      | Chorion       | Allantois | Yolk Sac | Respiratory membrane |
+    |------------+---------------+---------------+-----------+----------+----------------------|
+    | Birds      | Ec, SomM      | Ec, SomM      | En, SplM  | En, SplM | Ch, A                |
+    | Reptiles   | Ec, SomM      | Ec, SomM      | En, SplM  | En, SplM | Ch, A                |
+    | Monotremes | Ec, SomM      | Ec, SomM      | En, SplM  | En, SplM | Ch, A                |
+    | Marsupials | Ec, SomM      | Ec, SomM      | En, SplM  | En, SplM | Ch, splpl            |
+    | Placentals | Ec (tr), SomM | Ec (tr), SomM | En, SplM  | En, SplM | Ch, A                |
+
+ * Ec = Ectoderm
+ * SomM = Somatic mesoderm
+ * SplM = Splanchnic mesoderm
+ * Ch = Chorion
+ * A = Allantois
+ * splpl = Splanchnopleure
+
+"^^xsd:string
+
+    Types: 
+        ubref:biological_modeling
+
+
+Individual: <http://purl.obolibrary.org/obo/uberon/references/reference_0000014>
+
+    Annotations:
+        ubref:has_status <http://purl.org/spar/pso/intermediate-draft>,
+        dc:date "2012"^^xsd:int,
+        dc:creator "Chris Mungall"^^xsd:string,
+        dc:title "Representation of paired structures"^^xsd:string,
+        rdfs:label "Representation of paired structures"^^xsd:string,
+        dc:abstract "..."^^xsd:string,
+        ubref:superseded_by <http://purl.obolibrary.org/obo/uberon/docs/Modeling-paired-structures-Design-Pattern>,
+        dc:description "
+
+## Pattern
+
+Classes for bilaterally paired structures should in general follow
+this subsumption hierarchy:
+
+ * X
+     * left X
+     * right X
+
+Often it is not necessary to include the two subclasses in the ontology.
+See the guidelines section below
+
+## Laterality relations
+
+When left and right subclasses are materialized, they should have
+logical definitions.  The following relation hierarchy should be used
+for bilaterally paired structures:
+
+ * in_lateral_side_of
+     * in_left_side_of
+     * in_right_side_of
+
+For example:
+
+ * `left lung` EquivalentTo lung and in_left_side_of some `pair of lungs`
+
+However, these will not always be appropriate. For example, it may
+make sense to define certain paired veins by the structure they
+connect to. E.g. `left testicular vein` EquivalentTo 'testicular vein'
+and connected_to some `left testicle`.
+
+For many paired structures in Bilateria, the class `multi-cellular
+organism` can be used
+
+## When to create subclasses
+
+It is not always necessary to create the left and right
+subclasses. This is particularly true for skeletal subdivisions, which
+may more typically be symmetric. Internal organs may have more
+asymmetries and thus there is more of a case for making
+subclasses.
+
+Sometimes it can be useful to include both subclasses for structures
+that meet in the midline, so as to describe the connecting
+structure. For example:
+
+ * `mandibular symphysis` connects some 'left dentary' and connects some 'right dentary`
+
+Although there are other ways to say the equivalent thing, the above
+pattern is recommended in this ontology, as it is the most straightforward.
+
+In general, if a one half is materialized in the ontology, the other
+should be - especially for symmetric structures
+
+## Generic parent class
+
+The generic class may also receive a in_lateral_side_of axiom. For
+example, if every `naris` is part of either the left or right side of
+the head, then we can write an axiom:
+
+ * `naris` SubClassOf in_lateral_side_of some `head`
+
+However, if there exist unpaired medial nares this would be
+inappropriate. 
+
+Errors can automatically be detected for example if there is a class
+'median naris' and this is stated to be in the medial part of the head.
+
+## Pair classes
+
+For any type of structure that appears bilaterally, it is possible to
+create 4 distinct classes:
+
+ * X
+ * left X
+ * right X
+ * pair of Xs
+
+It is important not to conflate these. A pair of Xs is *not* the same
+thing as an X. The axiom pattern is:
+
+ * X SubClassOf part_of some pair_of_Xs
+ * {left,right} X SubClassOf X
+ * {left,right} X SubClassOf in_{left,right}_side_of some pair_of_Xs
+
+In general the class 'pair_of_Xs' can be omitted from the ontology for
+symmetric structures, although these sometimes included, particularly
+in cases where other ontologies create the pairing class.
+ 
+
+"^^xsd:string
+
+    Types:
+        ubref:ontology_design_pattern
+
+
+Individual: <http://purl.obolibrary.org/obo/uberon/references/reference_0000015>
+
+    Annotations:
+        ubref:has_status <http://purl.org/spar/pso/intermediate-draft>,
+        dc:date "2012"^^xsd:int,
+        dc:creator "Chris Mungall"^^xsd:string,
+        dc:title "Automatic classification of skeleton partonomy"^^xsd:string,
+        rdfs:label "Automatic classification of skeleton partonomy"^^xsd:string,
+        dc:abstract "..."^^xsd:string,
+        ubref:superseded_by <http://purl.obolibrary.org/obo/uberon/docs/Skeleton-partonomy-Design-Pattern>,
+        dc:description "
+
+## Problem
+
+OWL reasoners can automatically generate a subsumption
+hierarchy. However, we often want to automatically classify a
+partonomy - for example:
+
+ * `manual digit phalanx` SubClassOf part_of some `forelimb skeleton`
+
+## Solution
+
+Our solution here is to create a bone grouping class for every
+skeletal subdivision. For example:
+
+ 1. `manual phalanx` EquivalentTo `phalanx` and part_of some `manus`
+ 2. `phalanx` SubClassOf some `bone`
+ 3. `forelimb bone` EquivalentTo `bone` and part_of some `pectoral limb`
+ 4. `forelimb bone` SubClassOf part_of some `forelimb skeleton`
+
+With the above axioms, `manual phalanx` will be classified as forelimb
+bone, which is asserted to be part of the forelimb skeleton.
+
+The combination of 3+4 above is an example of a *hidden GCI*. We
+create these for every skeletal subdivsion, such that we have:
+
+ * X bone EquivalentTo `bone` and part_of some X
+ * X bone SubClassOf part_of some X skeleton
+
+It is important that X is the organism subdivision here.
+
+## Alternatives
+
+One alternative is to use an actual GCI. Here we 'unfold' axioms 3 and
+4 above to make:
+
+ 1. `manual phalanx` EquivalentTo `phalanx` and part_of some `manus`
+ 2. `phalanx` SubClassOf some `bone`
+ 5. `bone` and part_of some `pectoral limb` SubClassOf part_of some `forelimb skeleton`
+
+This is equivalent, but there are practical strengths of benefits to
+both approaches:
+
+ * hidden GCIs of the form above are possible in obo-format; actual GCIs are not
+ * many ontologies like MA have 'X bone' classes, whereas ontologies like FMA have skeletal subdivsions
+  * materializing both forms in Uberon simplifies bridging between these
+  * the proliferation of terms can be confusing to annotators, but it is possible to make subsets that exclude either form
+
+"^^xsd:string
+
+    Types:
+        ubref:ontology_design_pattern
+ 
+     
+    
+Individual: <http://purl.obolibrary.org/obo/uberon/references/reference_0000007>
+
+    Annotations: 
+        ubref:has_status <http://purl.org/spar/pso/peer-reviewed>,
+        dc:date "2011"^^xsd:int,
+        dc:creator "John Lundberg"^^xsd:string,
+        dc:creator "Wasila Dahdul"^^xsd:string,
+        dc:contributor "Phenoscape"^^xsd:string,
+        dc:title "Vertebrate cranial terms"^^xsd:string,
+        rdfs:seeAlso "https://docs.google.com/spreadsheet/ccc?key=0Aj8NJdyb-leqdDM0R3hTVTRHRExDVjRCSkZEbDc5N1E#gid=0"^^xsd:anyURI,
+        rdfs:label "Vertebrate cranial terms"^^xsd:string,
+        dc:description "
+
+"^^xsd:string
+
+    
+    Types: 
+        ubref:spreadsheet_documentation
+    
+    
+Individual: <http://purl.obolibrary.org/obo/uberon/references/reference_0000008>
+
+    Annotations: 
+        dc:title "Obo-anatomy call, 2012-08-17"^^xsd:string,
+        rdfs:seeAlso "http://wiki.phenotypercn.org/wiki/August_2012_Notes"^^xsd:anyURI,
+        ubref:has_status <http://purl.org/spar/pso/published>,
+        dc:date "2012"^^xsd:int,
+        dc:creator "(Add participants here)"^^xsd:string,
+        rdfs:label "Obo-anatomy call, 2012-08-17"^^xsd:string,
+        dc:abstract "Decisions reached about axial skeleton: bless a 3 level division into cranial, axial and appendicular. here \"axial skeleton\" refers to what we have been calling \"post-cranial axial skeleton\" in uberon (and MA). We can still retain what we had been calling \"axial skeleton\" as a grouping class, but it can be renamed something like \"axial skeleton plus cranial skeleton\""^^xsd:string,
+        ubref:superseded_by <http://purl.obolibrary.org/obo/uberon/docs/The-axial-skeleton>,
+        dc:description "
+
+"^^xsd:string
+    
+    Types: 
+        ubref:description_of_a_meeting
+    
+    
+Individual: <http://purl.obolibrary.org/obo/uberon/references/reference_0000006>
+
+    Annotations: 
+        rdfs:seeAlso "https://docs.google.com/document/d/1r9kNPpFYGdu0SpJDLyFAVQczBlG0wAZCBMd18gG3Ot8/edit#"^^xsd:anyURI,
+        ubref:has_status <http://purl.org/spar/pso/initial-draft>,
+        dc:date "2012"^^xsd:int,
+        dc:creator "Uberon editors"^^xsd:string,
+        dc:title "Ontology schema for representing the cephalic region and postcranial axial skeletal system"^^xsd:string,
+        rdfs:label "Ontology schema for representing the cephalic region and postcranial axial skeletal system"^^xsd:string,
+        dc:description "
+
+"^^xsd:string
+    
+    Types: 
+        ubref:biological_modeling
+    
+    
+Individual: <http://purl.obolibrary.org/obo/uberon/references/reference_0000003>
+
+    Annotations: 
+        rdfs:label "Appendages and appendicular skeleton"^^xsd:string,
+        dc:title "Appendages and appendicular skeleton"^^xsd:string,
+        rdfs:seeAlso "https://docs.google.com/document/d/16JZOuH9sh_a8uIXA4cqg0Q1H6MV5yCj3-rhuKsZoV_U/edit"^^xsd:anyURI,
+        dc:creator "VAO editors"^^xsd:string,
+        ubref:has_status <http://purl.org/spar/pso/intermediate-draft>,
+        dc:date "2012"^^xsd:int,
+        dc:creator "Uberon editors"^^xsd:string,
+        dc:creator "other AO editors"^^xsd:string,
+        ubref:superseded_by <http://purl.obolibrary.org/obo/uberon/docs/Appendages-and-the-appendicular-skeleton>,
+        dc:description "
+
+## Vertebrate appendages
+
+The generic pan-vertebrate schema is to allow treatment of free
+limb/fin plus girdle as both a single unit, and as two sub-parts, as
+in the following partonomy:
+
+ * `appendage girdle complex` (i.e. limb/fin PLUS girdle region)
+     * `appendage girdle region`
+     * `limb/fin` (aka free limb/fin)
+
+Note these classes are all organism subdivisions.
+
+The hierarchy is jointly exhaustive and pairwise disjoint with respect
+to parthood.
+
+This generic structure is repeated 4 times in many vertebrates - once
+bilaterally, and once for pelvic/pectoral.
+
+
+## Tetrapods 
+
+In tetrapods, this is further specified as the following JEPD
+hierarchy (with siblings ordered proximal to distal):
+
+ * `appendage girdle complex` (i.e. limb PLUS girdle region)
+     * `appendage girdle region`
+     * `limb` (aka free limb)
+         * `stylopod` 
+         * `zeugopod`
+         * `autopod`
+             * `mesopodium region`
+             * `digitopodium region` (aka hand/foot proper)
+                 * `metapodial region`
+                 * `acropodial segment`
+
+
+## Other combinations
+
+We include `arm` as the mereological sub of forelimb stylo- and zeugo-
+pods, and `leg` as the mereological sum of the corresponding parts in
+the hindlimb.
+
+Note that these labels are ambiguous. For example, FMA follows some
+clinical practice in using 'arm' and 'leg' for the zuegopodial segments.
+
+## Skeletons
+
+We include a parallel structure for representing skeletal subdivisions.
+
+ * `entire appendicular skeleton` **
+     * `girdle skeleton`
+     * `skeleton of limb`
+         * `stylopodial skeleton` 
+         * `zeugopodial skeleton`
+         * `skeleton of autopod`
+             * `mesopodium skeleton`
+             * `digitopodium skeleton` (aka skeleton of hand/foot proper)
+                 * `metapodial skeleton`
+                 * `acropodial skeleton`
+
+Note that `entire appendicular skeleton` denotes the entire skeleton of all limbs together.
+
+## Embryonic skeleton
+
+We consider pre-cartilage condensations part of the skeleton
+
+## Skeletal elements
+
+We follow the following subclass hierarchy (ordered ontogenetically, most recent first)
+
+ * X element
+     * X bone
+     * X cartilage
+     * X pre-cartilage condensation
+     * X mesenchyme
+
+This is consistent with the structure in EHDAA2
+
+Some exceptions:
+
+ * we have not always created the 'X element' grouping class, but we will likely add more of these in future.
+ * sometimes the developmental relationship may not be 1:1 - e.g. there may be fusions/splits
+
+"^^xsd:string
+    
+    Types: 
+        ubref:biological_modeling
+    
+    
+Individual: <http://purl.obolibrary.org/obo/uberon/references/reference_0000004>
+
+    Annotations: 
+        ubref:has_status <http://purl.org/spar/pso/initial-draft>,
+        dc:date "2012"^^xsd:int,
+        rdfs:seeAlso "https://docs.google.com/document/d/1cPWBqrl_Qy7XHEWFqtR_PgQX61yRkgGuLaiDpnEXxkE/edit"^^xsd:anyURI,
+        dc:title "Mereotopological relations"^^xsd:string,
+        rdfs:label "Mereotopological relations"^^xsd:string,
+        dc:creator "Uberon editors"^^xsd:string,
+        ubref:superseded_by <http://purl.obolibrary.org/obo/uberon/docs/Connectivity-Design-Pattern>,
+        dc:description "
+
+This article needs to be migrated from the google doc
+
+"^^xsd:string
+    
+    Types: 
+        ubref:ontology_design_pattern
+    
+    
+Individual: <http://purl.obolibrary.org/obo/uberon/references/reference_0000001>
+
+    Annotations: 
+        dc:creator "Chris Mungall"^^xsd:string,
+        dc:title "Epithelial configurations"^^xsd:string,
+        dc:abstract "Epithelia can take on a variety of different shapes and topologies. We present here a plan for a consistent representation of epithelial morphotopology based on representation in existing ontologies. We also look at the representation of ducts in different ontologies."^^xsd:string,
+        dc:creator "David Osumi-Sutherland"^^xsd:string,
+        ubref:has_status <http://purl.org/spar/pso/initial-draft>,
+        dc:date "2011"^^xsd:int,
+        dc:creator "Melissa Haendel"^^xsd:string,
+        dc:contributor "Jonathan Bard"^^xsd:string,
+        rdfs:label "Epithelial configurations"^^xsd:string,
+        rdfs:seeAlso "https://docs.google.com/document/d/1MnUgispgGfNQoezYzWzzGTnkAnI0gzRnJIwdip6MMtw/edit"^^xsd:anyURI,
+        dc:contributor "David Hill"^^xsd:string,
+        ubref:superseded_by <http://purl.obolibrary.org/obo/uberon/docs/Epithelial-configurations>,
+        dc:description "
+
+The documentation for this section has yet to be moved from the google document.
+
+"^^xsd:string
+    
+    Types: 
+        ubref:biological_modeling
+    
+    
+Individual: <http://purl.obolibrary.org/obo/uberon/references/reference_0000002>
+
+    Annotations: 
+        rdfs:seeAlso "http://wiki.phenotypercn.org/wg/phenotypercn/index.php?title=Neural_Crest_Workshop"^^xsd:anyURI,
+        dc:abstract "The neural crest workshop consists of a combination of domain experts with a variety of expertise (comparative neural crest anatomy, craniofacial, placodal, ENS/PNS, cell typing, etc) and ontologists. The outcome will be a much improved representation of neural crest amongst a number of ontologies including (but not limited to!) the Gene Ontology (GO), Uberon, the vertebrate musculosketal ontology (VAO), mouse anatomy (MA), the cell ontology, human developmental (EHDAA2/FMA), and the Teleost Anatomy Ontology (TAO). The hope is that the participants will form a new community around this work and author a paper together."^^xsd:string,
+        dc:title "Phenotype RCN Neural Crest Meeting"^^xsd:string,
+        ubref:has_status <http://purl.org/spar/pso/initial-draft>,
+        dc:date "2012"^^xsd:int,
+        rdfs:label "Phenotype RCN Neural Crest Meeting"^^xsd:string,
+        ubref:superseded_by <http://purl.obolibrary.org/obo/uberon/docs/The-neural-crest>,
+        dc:description "
+
+"^^xsd:string
+    
+    Types: 
+        ubref:description_of_a_meeting
+    
+    
+
+Individual: <http://purl.obolibrary.org/obo/uberon/references/reference_0000025>
+
+    Annotations:
+        dc:date "2012"^^xsd:int,
+        dc:creator "Chris Mungall"^^xsd:string,
+        dc:title "Skeletal system vs skeleton"^^xsd:string,
+        rdfs:label "Skeletal system vs skeleton"^^xsd:string,
+        dc:abstract "In common usage the terms skeletal system and skeleton may be used interchangeably, but they have different meanings in this ontology"^^xsd:string,
+        ubref:superseded_by <http://purl.obolibrary.org/obo/uberon/docs/The-skeletal-system>,
+        dc:description "
+
+## Skeletons are part of the skeletal system
+
+Uberon follows the FMA in using the terms 'skeletal system' and
+'skeleton' very precisely, as the following partonomic view shows:
+
+ * `skeletal system` -- skeleton plus all joints
+     * `skeleton`     -- set of all skeletal elements in an organism
+     * `articular system` -- set of all joints in an organism
+
+Note that we generalize the FMA notion of skeleton, to include
+cartilage elements, but the basic division remains the same: joints
+are *NOT* part of skeleton, they are part of the articular system (and
+by transitivity, part of the skeletal system).
+
+Note the above partonomy is not pairwise part-disjoint - joints can be
+a part of bone parts.
+
+## Template
+
+This is carried through for individual structures, the following
+template is followed:
+
+ * X skeletal system -- all skeletal elements plus joints in X
+     * X skeleton     -- set of all skeletal elements in an X
+     * X articular system -- set of all joints in an X
+
+## Issues
+
+There are a number of issues with the above scheme.
+
+1. It can lead to class inflation if we include two cuts of every
+skeletal subdivision. This can be managed somewhat automatically.
+
+2. It can be confusing for users and editors. Users may accidentally
+select the wrong term as the labels sound similar, and not everyone
+reads definitions closely. Editors may classify things wrongly.
+
+3. It leads to some curious unintuitive situations. For example, by
+the above definition, cranial sutures are not part of the skull,
+assuming the skull is part of the skeleton. However, cranial sutures
+would be part of the cranial skeletal system.
+
+## Future development
+
+It is not clear if the above system should be maintained or if the
+skeleton terms should be merged into the skeletal system ones. More
+user input is required.
+
+"^^xsd:string
+
+    Types:
+         ubref:ontology_design_pattern
+
+ 
+
+Individual: <http://purl.obolibrary.org/obo/uberon/references/reference_0000026>
+
+    Annotations:
+        dc:date "2012"^^xsd:int,
+        dc:creator "Chris Mungall"^^xsd:string,
+        dc:creator "Melissa Haendel"^^xsd:string,
+        dc:creator "Carlo Torniai"^^xsd:string,
+        dc:title "Inter anatomy ontology bridge module ontologies"^^xsd:string,
+        dc:abstract "This article describes how connections between species anatomy ontologies are made via formal axioms that connect to Uberon"^^xsd:string,
+        ubref:superseded_by <http://purl.obolibrary.org/obo/uberon/docs/inter-anatomy-ontology-bridge-ontologies>,
+        dc:description "
+
+## Problem
+
+Figure 2 from the Uberon paper graphically illustrates how Uberon
+classes subsume classes in existing anatomy ontologies;
+
+![Figure 2](http://www.ncbi.nlm.nih.gov/pmc/articles/instance/3334586/bin/gb-2012-13-1-r5-2.jpg)
+
+Figure legend: '*Illustration of how Uberon relates anatomical silos into a unified view*.
+Uberon classes are shown in gray and classes
+from external ontologies are indicated with their respective
+prefix. Classes in light gray have computable definitions, which are
+indicated by the relations shown. For example, 'alveolus of lung' is_a
+'alveolus' that is part_of some 'lung'. 'Respiration organ' is_a organ
+that is capable_of GO:respiratory gaseous exchange. The blue circle
+indicates what would be included in a mammal-restricted subset of
+Uberon, as swim bladder is not found in mammals. Use of Uberon
+together with taxon-specific anatomy ontologies enables bridging of
+the data with full reasoning capabilities. In this example, Uberon
+'lung' subsumes the lung classes from the mouse and human anatomy
+ontologies. Classes in the blue circle plus the blue classes at the
+bottom would be available in uberon-collected-mammal.owl. Note that
+some relationships have been trimmed for illustration purposes.'
+
+This article describes how to obtain the axioms that connect these ontologies
+
+## Multi-species bridge modules
+
+Links between Uberon and other AOs are stored as *bridge
+ontologies*. These all have ontology URIs of the form:
+
+```http://purl.obolibrary.org/obo/uberon/bridge/uberon-bridge-to-ONTOLOGY.owl```
+
+Where ONTOLOGY is the official obolibrary ontology ID (i.e. the ontology namespace in lowercase).
+
+Bridge modules fall into different categories, depending on the nature of the relationship between Uberon and the other AO
+
+### Equivalent-for-taxon axioms
+
+These are 3-valued relations between a generic structure, a taxon and
+an anatomy class, represented as an owl equivalence to a
+taxon-constrained class expression.
+
+Example:
+
+```
+    MA:lung EquivalentTo (UBR:lung AND part_of some NCBITaxon:Mus)
+```
+
+This is stronger than simply saying the mouse lung is a subclass of the generic lung.
+
+This is the preferred pattern for species-specific anatomy ontologies
+
+### SubClass axioms
+
+Example:
+
+```
+    EMAPA:lung SubClassOf UBR:lung
+```
+
+These are weaker than taxonomic equivalence. These bridging axioms are
+made for ontologies such as EMAPA which may have multiple distinct
+classes for what appears to be the same structure.
+
+### Equivalence axioms
+
+Example:
+
+```
+    NIF:forebrain EquivalentTo UBR:forebrain
+```
+
+Bona-fide equivalence axioms are the strongest, and are only made when
+the external AO is deemed to make the same taxonomic generalizations
+as Uberon.
+
+## Alternate strategy: assuming complete equivalence
+
+Sometimes it may be beneficial to assume true equivalence between
+Uberon classes and species AOs, even in cases where this leads to
+contradictions due to species variability. This may be the case for
+doing a phenotype similarity analysis. In this case its necessary to
+remove disjointness axioms. An example of a contradiction that might
+arise is inferring that human teeth are part of the throat, based on
+the an equivalence between zebrafish (ceratobranchial 5) tooth, uberon
+`calcareous tooth`, and FMA:tooth (the ceratobranchial teeth are in
+the pharynx). Note that this situation does *NOT* arise if the correct
+bridging ontology,
+http://purl.obolibrary.org/obo/uberon/bridge/uberon-bridge-to-zfa.owl,
+is used, which has weaker equivalent-for-taxon axioms
+
+## Usage in importer modules
+
+See
+[reference_0000027](http://purl.obolibrary.org/obo/uberon/references/reference_0000027)
+for a description of how bridge modules are used by multi-species
+anatomy importer modules.
+
+## Future directions
+
+In the future
+
+"^^xsd:string
+
+    Types:
+         ubref:ontology_usage_article
+
+Individual: <http://purl.obolibrary.org/obo/uberon/references/reference_0000027>
+
+    Annotations:
+        dc:date "2012"^^xsd:int,
+        dc:creator "Chris Mungall"^^xsd:string,
+        dc:creator "Melissa Haendel"^^xsd:string,
+        dc:creator "Carlo Torniai"^^xsd:string,
+        dc:title "Multi-species importer ontologies"^^xsd:string,
+        rdfs:label "Multi-species importer ontologies"^^xsd:string,
+        dc:abstract "There are different ways of integrating a multi-species ontology with species-specific ones. This article describes the importer strategy"^^xsd:string,
+        ubref:superseded_by <http://purl.obolibrary.org/obo/uberon/docs/Multi-species-importer-ontologies>,
+        dc:description "
+
+Please read
+[reference_0000026](http://purl.obolibrary.org/obo/uberon/references/reference_0000026)
+before this one.
+
+## Problem
+
+Ontologies such as ZFA, MA and FMA all contain structures with labels
+such as 'vertebra' or 'lung' (the latter is not in the ZFA, as
+zebrafish do not have lungs). How do we connect between these classes
+and the subsuming Uberon structure?
+
+## Multi-species importers and bridge modules
+
+The importer strategy uses recursive OWL import chains to connect
+multiple species anatomy ontologies with Uberon at the desired level
+of taxonomic granularity. An importer/collector module for a taxon
+imports the relevant species-specific anatomy ontologies, together
+with *bridging axioms* that connect the species anatomy class with its
+generic uberon subsumer. These may be subclass axioms, equivalence
+axioms, or taxonomic equivalence axioms. In addition, each bridge file
+adds 'obo foundry unique label' properties which 're-label' existing
+classes, such that FMA:lung has the unique label 'adult human lung'.
+
+This is illustrated via Figure 3 from the uberon paper:
+
+![Figure 3](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3334586/bin/gb-2012-13-1-r5-3.jpg)
+
+Figure legend: Import chain of taxonomically arranged Uberon
+modules. Each combined module at different taxonomic levels imports
+the relevant native ontologies as well as bridge files that specify
+the logical definitions. The number of equivalent class (EC) or
+SubClass (SC) axioms in each bridge file are shown, illustrating the
+contributions of each ontology to the total infrastructure.
+
+(Note the ontology landscape continues to change since this paper was
+published, but even if the individual ontologies change, the principle
+is the same)
+
+## Advantages
+
+ * retains all logical and non-logical axioms of source ontology;
+   reasoning 'just works'
+
+ * allows incorporation at desired level of granularity
+
+
+## Disadvantages
+
+ * resulting import chain is very large
+
+ * resulting ontology is highly latticed and difficult to navigate
+
+ * differences between a species class and the uberon parent is often
+   trivial or non-existent, resulting in duplicated portions of the
+   hierarchy.
+
+ * Many tools not configured to show 'obo foundry unique label', which
+   means that for example collected-metazoa.owl will display 10 or so
+   classes with the rdfs:label of 'brain'
+
+ * obo foundry unique label is only generated for primary label, not existing
+   synonyms.
+
+ * Difficult to use with obo-format, as obo-format tools do not handle
+   imports well
+
+"^^xsd:string
+
+    Types:
+         ubref:ontology_usage_article
+
+ 
+
+
+Individual: <http://purl.obolibrary.org/obo/uberon/references/reference_0000028>
+
+    Annotations:
+        dc:date "2012"^^xsd:int,
+        dc:creator "Chris Mungall"^^xsd:string,
+        dc:creator "Melissa Haendel"^^xsd:string,
+        dc:creator "Carlo Torniai"^^xsd:string,
+        rdfs:seeAlso "http://www.obofoundry.org/wiki/index.php/UBERON:Merging"^^xsd:anyURI,
+        rdfs:seeAlso "http://purl.obolibrary.org/obo/uberon/references/reference_0000027"^^xsd:anyURI,
+        dc:title "Multi-species composite ontologies"^^xsd:string,
+        dc:abstract "There are different ways of integrating a multi-species ontology with species-specific ones. This article describes the composite/merger strategy"^^xsd:string,
+        ubref:superseded_by <http://purl.obolibrary.org/obo/uberon/docs/Multi-species-composite-ontologies>,
+        dc:description "
+
+
+Please read
+[reference_0000027](http://purl.obolibrary.org/obo/uberon/references/reference_0000027)
+before this one.
+
+## Problem
+
+The [importer/collector
+strategy](http://purl.obolibrary.org/obo/uberon/references/reference_0000027)
+can deal with bridging multiple anatomy ontologies, but introduces
+complexities and redundancy.
+
+This article describes an alternate approach in which species anatomy classes are collapsed into their subsuming Uberon class
+
+The two composite ontologies regularly created are:
+
+ * [composite-vertebrate](http://purl.obolibrary.org/obo/uberon/composite-vertebrate.owl)
+ * [composite-metazoan](http://purl.obolibrary.org/obo/uberon/composite-metazoan.owl)
+
+(obo-format versions are available)
+
+## Multi-species composite modules
+
+Using this strategy a new ontology is created that contains all core
+uberon classes, plus leaf branches from other AOs, consisting of
+structures for which there is no generalized taxonomic equivalent in
+Uberon.
+
+The following OBO-Edit screenshot shows how human, zebrafish and human
+specific classes inherit from generic classes such as `somite` in Uberon:
+
+![somite](http://www.obofoundry.org/wiki/images/3/3d/Somite.jpg)
+
+(Uberon terms are green)
+
+This approach differs from the importer strategy is that there is no
+ZFA or XAO class 'somite' in the merged ontology. A composite ontology
+solves the problem of redundancy.
+
+## Safe axiom merging
+
+The axioms for leaf classes can be brought in safely, as the referent
+of the leaf classes remains species-specific.
+
+When a non-leaf class is merged in, its axioms are translated to a
+taxon GCI, preserving equivalence and avoiding introduction of
+contradictions.
+
+## Advantages and disadvantages
+
+Compared to the importer strategy, there is less redundancy (although
+there may still be multiple classes with labels like 'somite N in
+species S'.
+
+## Variants
+
+A composite ontology can be used in conjunctions with ontology bridging axioms
+
+
+"^^xsd:string
+
+    Types:
+         ubref:ontology_usage_article
+
+
+Individual: <http://purl.obolibrary.org/obo/uberon/references/reference_0000037>
+
+    Annotations:
+        dc:date "2012"^^xsd:int,
+        dc:creator "Chris Mungall"^^xsd:string,
+        dc:title "Synonyms in uberon"^^xsd:string,
+        dc:abstract "This article describes how to use uberon synonymy metadata for text mining"^^xsd:string,
+        ubref:superseded_by <http://purl.obolibrary.org/obo/uberon/docs/Using-uberon-for-text-mining>,
+        dc:description "
+
+## Synonym scopes
+
+Uberon uses the standard 4 OBO synonym scopes:
+
+ * EXACT
+ * BROAD
+ * NARROW
+ * RELATED
+
+The standard obo2owl mapping is used here consult the (obo
+spec)[http://oboformat.org] for details; currently the following
+annotation properties are used:
+
+ * hasExactSynonym
+ * hasBroadSynonym
+ * hasNarrowSynonym
+ * hasRelatedSynonym
+
+## Label uniqueness
+
+The uberon build pipeline ensures that no two classes share the same
+string as either a label or exact synonym. This helps detect common
+categories of errors.
+
+## Languages
+
+Languages are indicated by a lang tag, e.g. '@fr'. Note that this is
+not yet currently translated in the owl correctly.
+
+The exception is latin, for which a LATIN synonym type is used
+
+## Synonym types
+
+The ontology contains a growing list of synonym types or tags, which
+may be useful for text mining. See the ontology for a full list.
+
+ * ABBREVIATION - Acronym or abbreviation
+ * LATIN - Typically the TA preferred term
+ * DUBIOUS - the synonym may be contested or midleading
+ * DEPRECATED - a historic synonym that may be used in older texts but discouraged in modern usage
+ * SENSU - a term typically used within a certain taxonomic scope
+ * ...
+
+## Synonym provenance
+
+We aim to eventually have provenance for all synonyms. Currently most
+of these are xrefs to species anatomy ontologies, but in future more
+will be PMIDs etc.
+
+In some cases an NCBITaxon ID is used as synonym provenance. This
+indicates when a term is preferred or used within a particular
+taxonomic context.
+
+## Relational adjectives
+
+We include a has_relational_adjective annotation property to indicate
+what the adjectival form of the noun that describes the structure
+is. For example, 'hippocampal' for `Ammon's horn`.
+
+## OBO Foundry Unique Label
+
+In the Uberon bridging axiom ontologies the 'OBO Foundry unique label'
+property is used to provide a label that is intended to be unique
+across the whole OBO Foundry. The unique labels are generated
+automatically be suffixing the ontology-provided label with a
+qualifying term.
+
+For example, the FMA class for 'heart' has the OBO Foundry unique
+label 'heart (canonical adult human)' to disambiguate it from 'heart
+(adult mouse)' in MA or the embryonic heart as represented in EHDAA2.
+
+"^^xsd:string
+
+    Types:
+        ubref:ontology_usage_article
+  
+
+Individual: <http://purl.obolibrary.org/obo/uberon/references/reference_0000038>
+
+    Annotations:
+        dc:date "2013"^^xsd:int,
+        dc:creator "Chris Mungall"^^xsd:string,
+        dc:title "Provenance of relationships in Uberon"^^xsd:string,
+        rdfs:label "Provenance of relationships in Uberon"^^xsd:string,
+        rdfs:seeAlso "http://purl.obolibrary.org/obo/uberon/references/reference_0000032"^^xsd:anyURI,
+        rdfs:seeAlso "http://purl.obolibrary.org/obo/uberon/references/reference_0000023"^^xsd:anyURI,
+        ubref:superseded_by <http://purl.obolibrary.org/obo/uberon/docs/Provenance-Design-Pattern>,
+        dc:description "
+
+## Summary
+
+In this ontology we attempt as far as possible to record provenance at
+the per-relationship or per-axiom level, as opposed to at the
+per-class level. This additional level of granularity allows us to
+disentangle conflicting statements or add/remove relationships from
+specific sources.
+
+The corresponding OWL construct that allows us to do this is an axiom
+annotation.
+
+This document describes the use of axiom annotations in Uberon. The
+standard is evolving, and we welcome comments or suggestions for
+improvement.
+
+## Axiom Annotation Formalism
+
+In OWL, a class axiom is a statement found in an ontology, such as:
+
+``
+  Class: 'scleral cartilage' SubClassOf: develops_from some 'neural crest'
+``
+
+We may wish to record the origin of this assertion (especially in the
+case of developmental relationships, which straddles the border
+between ontological knowledge and experimental data). We can do this
+in OWL by associating the axiom with any number of *Annotation* -
+essentially key-value pairs, with the keys coming from some standard
+vocabulary.
+
+An annotation on an annotation looks like this in Manchester syntax:
+
+``
+  Class: 'scleral cartilage' 
+    SubClassOf: 
+      Annotation: source 'PMID:17051547'
+      develops_from some 'neural crest'
+``
+
+In Protege, the annotation is accessed via the '@' button next to the
+axiom. This symbol is colored if there exists any axioms for that
+annotation.
+
+In OWL you can be fairly flexible with your axiom annotations, but
+certain conventions make interoperability with OBO-Format
+easier. These include writing publications in the above format
+(although in future we would prefer to include the full URL of the
+PMID).
+
+The above looks like this in obo-format:
+
+``
+  id: UBERON:0010289
+  name: scleral cartilage
+  relationship: develops_from UBERON:0002342 {source='PMID:17051547'} ! neural crest
+``
+
+## Provanence sources
+
+### External Ontologies
+
+For historical reasons, Uberon includes many external ontologies as
+sources of axioms. Typically the ontology name is used, e.g.
+
+``
+  source='ZFA'
+``
+
+Note that in these cases the source was a species ontology, but the
+axiom has been generalized
+
+In all cases, ontology-based axiom annotations should be treated more
+as an audit trail rather than strong evidence in itself. We would like
+to arrive at a situation where the provenance for each ontology is
+some combination of domain expert curator and review, textbook - or in
+some cases, primary literature.
+
+Note also that currently no attempt has been made to capture *all* the
+ontologies that support a particular generalized statement. We may do
+this in the future, but the highest priority is getting good evidence
+for each assertion that is reasonably applicable for the appropriate
+taxon.
+
+### Literature
+
+Ideally axioms should supported by publications. Here the convention
+is to use a 'source' annotation together with an obo-style identifier
+such as a PMID or ISBN.
+
+For textbooks that are used frequently (e.g. Kardong in the case of
+uberon), these are referenced in the ontology header.
+
+### Wikipedia
+
+Many axioms in Uberon are supported by Wikipedia. Typically this was
+just noted as source='Wikipedia'. A dated wikipedia page would be
+better, but in many cases Wikipedia should be seen as a temporary
+measure, and eventually the provenance would be at the level of the
+references cited in the wikipedia article.
+
+### Tracker items, mail list discussions and meetings
+
+Often a relationship is supported by a discussion, e.g. on a mail list
+or tracker. In these cases a URL to the discussion should be provided.
+
+Sometimes batches of relationships are added at meetings. We follow
+the GO strategy of making a unique identifier for the meeting,
+providing a stable URL, and using that. Sometimes the meeting will be
+written up as a design document.
+
+### Ontology design documents
+
+Sometimes the evidence will be an article that is part of this set of
+articles. In this case, the URL is provided.
+
+For example, the Phenotype RCN neural crest meeting notes has this URL:
+
+ * http://purl.obolibrary.org/obo/uberon/references/reference_0000002
+
+### Automated Inference
+
+In many cases a relationship in an ontology can be automatically
+inferred. Although we don't typically assert these in the editors
+versions, these will be visible in the release version with an
+annotation of is_inferred=true (this is placed automatically by Obo
+Ontology Release Tool, OORT).
+
+Sometimes this tag will be supplemented by additional URLs. E.g.
+
+ * http://www.geneontology.org/cgi-bin/references.cgi#GO_REF:0000053
+
+Uberon makes use of non-standard inference procedures that are made
+using a rule-based system outside what normal OWL reasoners can
+handle. These should be marked with a URL describing them. For
+example, the axiom in Uberon:
+
+``
+  'metaphysis of femur' SubClassOf part_of some 'diaphysis of femur'
+``
+
+Is accompanied by an axiom annotation pointing to
+http://purl.obolibrary.org/obo/uberon/references/reference_0000032
+
+## Other annotation properties used
+
+As well as providing a path back to a web document or piece of
+literature, axioms may have individual notes from curators. The
+comment property can be used here.
+
+Sometimes semi-structured notes are added by using ad-hoc
+properties. For example, the axiom that states the stapes develops
+from Reciherts cartilage has two annotations:
+
+ * source: 'classical definition'
+ * contradicted_by: doi:10.1111/j.1469-7580.2006.00524.x
+
+This is somewhat ad-hoc. Conventions are still evolving and these
+annotations may be restructured to fit into a more standard community
+agreed upon model later on.
+
+## Evidence types
+
+Our goal is to eventually have each assertion backed up using an
+evidence system as in GO. Currently the focus is on capturing the
+reference, although we may go back later and add evidence types/codes.
+
+## Being bold vs conservative
+
+This article describes how to record provenance about a relationship,
+not when and whether a curator should make a relationship. There are
+separate articles for this. See for example
+http://purl.obolibrary.org/obo/uberon/references/reference_0000023 -
+which describes what to do for relationships that only hold for a
+subset of taxa.
+
+
+
+"^^xsd:string
+
+
+    Types:
+        ubref:metadata_description
+
+Individual: <http://purl.obolibrary.org/obo/uberon/references/reference_0000039>
+
+    Annotations:
+        dc:date "2013"^^xsd:int,
+        dc:creator "Chris Mungall"^^xsd:string,
+        dc:creator "Wasila Dahdul"^^xsd:string,
+        dc:creator "Melissa Haendel"^^xsd:string,
+        dc:title "Representation of joints/articulations"^^xsd:string,
+        rdfs:label "Representation of joints/articulations"^^xsd:string,
+        ubref:superseded_by <http://purl.obolibrary.org/obo/uberon/docs/Modeling-articulations-Design-Pattern>,
+        dc:description "
+
+## Classification
+
+Joints or articulations are structures that connect the elements of
+the skeletal system, or more generally, any articulated hardended body
+parts.
+
+We include a grouping class `articulation`, which is applicable to the
+joints of a variety of metazoans, including insects, and `skeletal
+joint`, which is specific to the skeletal elements of vertabrates.
+
+ * `articulation` -- any hardened body parts
+     * `skeletal joint` -- parts of the skeletal system
+
+A skeletal joint is the disjoint union of synovial and non-synovial
+forms - i.e. the following subhierarchy is jointly exhaustive and
+pairwise disjoint
+
+ * `skeletal joint`
+     * `synovial joint`
+     * `nonsynovial joint`
+
+We do not require that every skeletal joint is asserted under one of
+these two subclasses.
+
+## Relationships
+
+### Design Pattern
+
+We use the `connects` relationship type to link between a joint and
+two (or more) skeletal elements (or other hardened body parts).
+
+Note that we do not require a relationship to be stated between a body
+part and a joint - this is allowed, but care should be taken, as
+connectivity varies across taxa. For example, the quadrate-articular
+joint always connects a quadrate and an articular by
+definition. However, an articular is not always connected to a
+quadrate.
+
+The template that should be followed is:
+
+```
+  Class: 'X-Y joint'
+  EquivalentTo: `skeletal joint` AND
+   connects some X AND
+   connects some Y
+```
+
+(the genus term can be relaxed for non-vertebrates)
+
+### Inferences
+
+We can use the connects relationships to infer a connection between
+skeletal elements, but only in taxa for which that joint exists.
+
+
+
+
+"^^xsd:string
+
+
+    Types:
+        ubref:ontology_design_pattern
