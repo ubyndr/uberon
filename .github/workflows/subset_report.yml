@@ -28,12 +28,20 @@ jobs:
         run: |
           echo Taxon constraint updates do not exist
           echo "STATUS=0" >> $GITHUB_ENV
+      - name: dir check
+        run: |
+          pwd
+          ls -l
       # Checks-out main branch under "main" directory
       - uses: actions/checkout@v2
         if: env.STATUS == 1
         with:
           ref: main
           path: main
+      - name: dir check
+        run: |
+          pwd
+          ls -l
       - name: make step for branch
         if: env.STATUS == 1
         run: |
