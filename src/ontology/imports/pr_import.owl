@@ -14,10 +14,10 @@
         <dc:source rdf:resource="http://purl.obolibrary.org/obo/pr/obophenotype/releases/2022-01-25/pr_slim.owl"/>
         <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2022-03-01</owl:versionInfo>
     </owl:Ontology>
-    
 
 
-    <!-- 
+
+    <!--
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Annotation properties
@@ -25,76 +25,76 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/IAO_0000115 -->
 
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000115"/>
-    
+
 
 
     <!-- http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym -->
 
     <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym"/>
-    
+
 
 
     <!-- http://www.geneontology.org/formats/oboInOwl#hasDbXref -->
 
     <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
-    
+
 
 
     <!-- http://www.geneontology.org/formats/oboInOwl#hasExactSynonym -->
 
     <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
-    
+
 
 
     <!-- http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym -->
 
     <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym"/>
-    
+
 
 
     <!-- http://www.geneontology.org/formats/oboInOwl#hasOBONamespace -->
 
     <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasOBONamespace"/>
-    
+
 
 
     <!-- http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym -->
 
     <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-    
+
 
 
     <!-- http://www.geneontology.org/formats/oboInOwl#hasSynonymType -->
 
     <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasSynonymType"/>
-    
+
 
 
     <!-- http://www.geneontology.org/formats/oboInOwl#id -->
 
     <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#id"/>
-    
+
 
 
     <!-- http://www.geneontology.org/formats/oboInOwl#is_transitive -->
 
     <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#is_transitive"/>
-    
+
 
 
     <!-- http://www.geneontology.org/formats/oboInOwl#shorthand -->
 
     <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#shorthand"/>
-    
 
 
-    <!-- 
+
+    <!--
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Object Properties
@@ -102,7 +102,7 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/BFO_0000050 -->
@@ -115,7 +115,7 @@
         <oboInOwl:shorthand>part_of</oboInOwl:shorthand>
         <rdfs:label>part_of</rdfs:label>
     </owl:ObjectProperty>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/BFO_0000051 -->
@@ -128,7 +128,7 @@
         <oboInOwl:shorthand>has_part</oboInOwl:shorthand>
         <rdfs:label>has_part</rdfs:label>
     </owl:ObjectProperty>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/RO_0000086 -->
@@ -141,7 +141,7 @@
         <oboInOwl:shorthand>has_quality</oboInOwl:shorthand>
         <rdfs:label>has_quality</rdfs:label>
     </owl:ObjectProperty>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/RO_0002160 -->
@@ -165,7 +165,7 @@
         <owl:annotatedTarget>U only_in_taxon T: U is a feature found in only in organisms of species of taxon T. The feature cannot be found in an organism of any species outside of (not subsumed by) that taxon. Down-propagates in U hierarchy, up-propagates in T hierarchy (species taxonomy). Implies applicable_to_taxon.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>ROC:Waclaw</oboInOwl:hasDbXref>
     </owl:Axiom>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/RO_0002180 -->
@@ -178,7 +178,7 @@
         <oboInOwl:shorthand>has_component</oboInOwl:shorthand>
         <rdfs:label>has_component</rdfs:label>
     </owl:ObjectProperty>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/RO_0002215 -->
@@ -191,7 +191,7 @@
         <oboInOwl:shorthand>capable_of</oboInOwl:shorthand>
         <rdfs:label>capable_of</rdfs:label>
     </owl:ObjectProperty>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/RO_0002353 -->
@@ -204,7 +204,7 @@
         <oboInOwl:shorthand>output_of</oboInOwl:shorthand>
         <rdfs:label>output_of</rdfs:label>
     </owl:ObjectProperty>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/pr#has_gene_template -->
@@ -215,10 +215,10 @@
         <oboInOwl:is_transitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</oboInOwl:is_transitive>
         <rdfs:label>has_gene_template</rdfs:label>
     </owl:ObjectProperty>
-    
 
 
-    <!-- 
+
+    <!--
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Classes
@@ -226,7 +226,7 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/BFO_0000019 -->
@@ -236,7 +236,7 @@
         <oboInOwl:id>BFO:0000019</oboInOwl:id>
         <rdfs:label>quality</rdfs:label>
     </owl:Class>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/BFO_0000030 -->
@@ -247,7 +247,7 @@
         <oboInOwl:id>BFO:0000030</oboInOwl:id>
         <rdfs:label>object</rdfs:label>
     </owl:Class>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/BFO_0000040 -->
@@ -257,7 +257,7 @@
         <oboInOwl:id>BFO:0000040</oboInOwl:id>
         <rdfs:label>material entity</rdfs:label>
     </owl:Class>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/CHEBI_23367 -->
@@ -275,7 +275,7 @@
         <owl:annotatedTarget>Any constitutionally or isotopically distinct atom, molecule, ion, ion pair, radical, radical ion, complex, conformer etc., identifiable as a separately distinguishable entity.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>fake:2</oboInOwl:hasDbXref>
     </owl:Axiom>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/CHEBI_24431 -->
@@ -287,7 +287,7 @@
         <oboInOwl:id>CHEBI:24431</oboInOwl:id>
         <rdfs:label>chemical entity</rdfs:label>
     </owl:Class>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/CHEBI_33247 -->
@@ -299,7 +299,7 @@
         <oboInOwl:id>CHEBI:33247</oboInOwl:id>
         <rdfs:label>organic group</rdfs:label>
     </owl:Class>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/CHEBI_33708 -->
@@ -325,7 +325,7 @@
         <owl:annotatedTarget>protein residue</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DAN</oboInOwl:hasDbXref>
     </owl:Axiom>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/CHEBI_50047 -->
@@ -337,7 +337,7 @@
         <oboInOwl:id>CHEBI:50047</oboInOwl:id>
         <rdfs:label>organic amino compound</rdfs:label>
     </owl:Class>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/GO_0005575 -->
@@ -356,7 +356,7 @@
         <owl:annotatedTarget>The part of a cell or its extracellular environment in which a gene product is located. A gene product may be located in one or more parts of a cell and its location may be as specific as a particular macromolecular complex, that is, a stable, persistent association of macromolecules that function together.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>GOC:go_curators</oboInOwl:hasDbXref>
     </owl:Axiom>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/GO_0006412 -->
@@ -375,7 +375,7 @@
         <owl:annotatedTarget>The cellular metabolic process in which a protein is formed, using the sequence of a mature mRNA or circRNA molecule to specify the sequence of amino acids in a polypeptide chain. Translation is mediated by the ribosome, and begins with the formation of a ternary complex between aminoacylated initiator methionine tRNA, GTP, and initiation factor 2, which subsequently associates with the small subunit of the ribosome and an mRNA or circRNA. Translation ends with the release of a polypeptide chain from the ribosome.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>GOC:go_curators</oboInOwl:hasDbXref>
     </owl:Axiom>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/GO_0008150 -->
@@ -394,7 +394,7 @@
         <owl:annotatedTarget>A biological process represents a specific objective that the organism is genetically programmed to achieve. Biological processes are often described by their outcome or ending state, e.g., the biological process of cell division results in the creation of two daughter cells (a divided cell) from a single parent cell. A biological process is accomplished by a particular set of molecular functions carried out by specific gene products (or macromolecular complexes), often in a highly regulated manner and in a particular temporal sequence.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>GOC:pdt</oboInOwl:hasDbXref>
     </owl:Axiom>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/GO_0016485 -->
@@ -421,7 +421,7 @@
         <owl:annotatedTarget>peptidolysis during protein maturation</owl:annotatedTarget>
         <oboInOwl:hasDbXref>GOC:mah</oboInOwl:hasDbXref>
     </owl:Axiom>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/NCBITaxon_10090 -->
@@ -447,7 +447,7 @@
         <owl:annotatedTarget>mouse</owl:annotatedTarget>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#PRO-common-name"/>
     </owl:Axiom>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/NCBITaxon_2759 -->
@@ -466,7 +466,7 @@
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DAN</oboInOwl:hasDbXref>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#PRO-short-label"/>
     </owl:Axiom>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/NCBITaxon_33154 -->
@@ -478,7 +478,7 @@
         <oboInOwl:id>NCBITaxon:33154</oboInOwl:id>
         <rdfs:label>Opisthokonta</rdfs:label>
     </owl:Class>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/NCBITaxon_33208 -->
@@ -497,7 +497,7 @@
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DAN</oboInOwl:hasDbXref>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#PRO-short-label"/>
     </owl:Axiom>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/NCBITaxon_40674 -->
@@ -523,7 +523,7 @@
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DAN</oboInOwl:hasDbXref>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#PRO-short-label"/>
     </owl:Axiom>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/NCBITaxon_9606 -->
@@ -550,7 +550,7 @@
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DAN</oboInOwl:hasDbXref>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#PRO-common-name"/>
     </owl:Axiom>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/NCBITaxon_9989 -->
@@ -568,7 +568,7 @@
         <owl:annotatedTarget>rodent</owl:annotatedTarget>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#PRO-common-name"/>
     </owl:Axiom>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/OBI_0100026 -->
@@ -580,7 +580,7 @@
         <rdfs:comment>Category=external.</rdfs:comment>
         <rdfs:label>organism</rdfs:label>
     </owl:Class>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/PR_000000001 -->
@@ -647,7 +647,7 @@
         <owl:annotatedTarget>native protein</owl:annotatedTarget>
         <oboInOwl:hasDbXref>IEDB:BP</oboInOwl:hasDbXref>
     </owl:Axiom>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/PR_000007499 -->
@@ -685,7 +685,7 @@
         <owl:annotatedTarget>AIGF</owl:annotatedTarget>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#Gene-based"/>
     </owl:Axiom>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/PR_000007636 -->
@@ -745,7 +745,7 @@
         <owl:annotatedTarget>WHN</owl:annotatedTarget>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#Gene-based"/>
     </owl:Axiom>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/PR_000009978 -->
@@ -788,7 +788,7 @@
         <owl:annotatedTarget>LF</owl:annotatedTarget>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#Gene-based"/>
     </owl:Axiom>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/PR_000010228 -->
@@ -824,7 +824,7 @@
         <owl:annotatedTarget>Shi</owl:annotatedTarget>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#Gene-based"/>
     </owl:Axiom>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/PR_000014841 -->
@@ -861,7 +861,7 @@
         <owl:annotatedTarget>Hhg1</owl:annotatedTarget>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#Gene-based"/>
     </owl:Axiom>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/PR_000015557 -->
@@ -904,7 +904,7 @@
         <owl:annotatedTarget>VSGP</owl:annotatedTarget>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#Gene-based"/>
     </owl:Axiom>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/PR_000015658 -->
@@ -945,7 +945,7 @@
         <owl:annotatedTarget>SSPOP</owl:annotatedTarget>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#Gene-based"/>
     </owl:Axiom>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/PR_000016283 -->
@@ -980,7 +980,7 @@
         <owl:annotatedTarget>Tgn</owl:annotatedTarget>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#Gene-based"/>
     </owl:Axiom>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/PR_000018263 -->
@@ -1020,7 +1020,7 @@
         <owl:annotatedTarget>polypeptide</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DAN</oboInOwl:hasDbXref>
     </owl:Axiom>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/PR_000018264 -->
@@ -1077,7 +1077,7 @@
         <owl:annotatedTarget>polypeptide</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DAN</oboInOwl:hasDbXref>
     </owl:Axiom>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/PR_000020497 -->
@@ -1122,7 +1122,7 @@
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#PRO-short-label"/>
     </owl:Axiom>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/PR_000021468 -->
@@ -1167,7 +1167,7 @@
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#PRO-short-label"/>
     </owl:Axiom>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/PR_000027222 -->
@@ -1196,7 +1196,7 @@
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#PRO-short-label"/>
     </owl:Axiom>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/PR_000027223 -->
@@ -1248,7 +1248,7 @@
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#PRO-short-label"/>
     </owl:Axiom>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/PR_000028527 -->
@@ -1275,7 +1275,7 @@
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DAN</oboInOwl:hasDbXref>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#PRO-short-label"/>
     </owl:Axiom>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/PR_000029032 -->
@@ -1318,7 +1318,7 @@
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DAN</oboInOwl:hasDbXref>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#PRO-short-label"/>
     </owl:Axiom>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/PR_000029067 -->
@@ -1361,7 +1361,7 @@
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DAN</oboInOwl:hasDbXref>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#PRO-short-label"/>
     </owl:Axiom>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/PR_000030026 -->
@@ -1441,7 +1441,7 @@
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#PRO-short-label"/>
     </owl:Axiom>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/PR_000036194 -->
@@ -1483,7 +1483,7 @@
         <owl:annotatedTarget>Eukaryota protein</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DAN</oboInOwl:hasDbXref>
     </owl:Axiom>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/PR_A2VEC9 -->
@@ -1567,7 +1567,7 @@
         <oboInOwl:hasDbXref>UniProtKB:A2VEC9</oboInOwl:hasDbXref>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#Gene-based"/>
     </owl:Axiom>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/PR_O08710 -->
@@ -1636,7 +1636,7 @@
         <oboInOwl:hasDbXref>UniProtKB:O08710</oboInOwl:hasDbXref>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#Gene-based"/>
     </owl:Axiom>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/PR_O15353 -->
@@ -1720,7 +1720,7 @@
         <oboInOwl:hasDbXref>UniProtKB:O15353</oboInOwl:hasDbXref>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#Gene-based"/>
     </owl:Axiom>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/PR_P01266 -->
@@ -1788,7 +1788,7 @@
         <oboInOwl:hasDbXref>UniProtKB:P01266</oboInOwl:hasDbXref>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#Gene-based"/>
     </owl:Axiom>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/PR_P02686 -->
@@ -1870,7 +1870,7 @@
         <oboInOwl:hasDbXref>UniProtKB:P02686</oboInOwl:hasDbXref>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#Gene-based"/>
     </owl:Axiom>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/PR_P02788 -->
@@ -1968,7 +1968,7 @@
         <oboInOwl:hasDbXref>UniProtKB:P02788</oboInOwl:hasDbXref>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#Gene-based"/>
     </owl:Axiom>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/PR_P04370 -->
@@ -2051,7 +2051,7 @@
         <oboInOwl:hasDbXref>UniProtKB:P04370</oboInOwl:hasDbXref>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#Gene-based"/>
     </owl:Axiom>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/PR_P08071 -->
@@ -2119,7 +2119,7 @@
         <oboInOwl:hasDbXref>UniProtKB:P08071</oboInOwl:hasDbXref>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#Gene-based"/>
     </owl:Axiom>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/PR_P37237 -->
@@ -2223,7 +2223,7 @@
         <owl:annotatedTarget>heparin-binding growth factor 8 (mouse)</owl:annotatedTarget>
         <oboInOwl:hasDbXref>UniProtKB:P37237</oboInOwl:hasDbXref>
     </owl:Axiom>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/PR_P55075 -->
@@ -2320,7 +2320,7 @@
         <oboInOwl:hasDbXref>UniProtKB:P55075</oboInOwl:hasDbXref>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#Gene-based"/>
     </owl:Axiom>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/PR_Q15465 -->
@@ -2402,7 +2402,7 @@
         <oboInOwl:hasDbXref>UniProtKB:Q15465</oboInOwl:hasDbXref>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#Gene-based"/>
     </owl:Axiom>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/PR_Q61575 -->
@@ -2515,7 +2515,7 @@
         <oboInOwl:hasDbXref>UniProtKB:Q61575</oboInOwl:hasDbXref>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#Gene-based"/>
     </owl:Axiom>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/PR_Q62226 -->
@@ -2612,7 +2612,7 @@
         <oboInOwl:hasDbXref>UniProtKB:Q62226</oboInOwl:hasDbXref>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#Gene-based"/>
     </owl:Axiom>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/PR_Q8CG65 -->
@@ -2672,7 +2672,7 @@
         <oboInOwl:hasDbXref>UniProtKB:Q8CG65</oboInOwl:hasDbXref>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#Gene-based"/>
     </owl:Axiom>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/PR_Q8VCC9 -->
@@ -2740,7 +2740,7 @@
         <oboInOwl:hasDbXref>UniProtKB:Q8VCC9</oboInOwl:hasDbXref>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#Gene-based"/>
     </owl:Axiom>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/PR_Q9HCB6 -->
@@ -2831,7 +2831,7 @@
         <oboInOwl:hasDbXref>UniProtKB:Q9HCB6</oboInOwl:hasDbXref>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#Gene-based"/>
     </owl:Axiom>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/SO_0000010 -->
@@ -2844,7 +2844,7 @@
         <rdfs:comment>Category=external.</rdfs:comment>
         <rdfs:label>protein_coding</rdfs:label>
     </owl:Class>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/SO_0000110 -->
@@ -2864,7 +2864,7 @@
         <owl:annotatedTarget>An extent of biological sequence.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>SO:ke</oboInOwl:hasDbXref>
     </owl:Axiom>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/SO_0000704 -->
@@ -2882,7 +2882,7 @@
         <owl:annotatedTarget>A region (or regions) that includes all of the sequence elements necessary to encode a functional transcript. A gene may include regulatory regions, transcribed regions and/or other functional sequence regions.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>SO:immuno_workshop</oboInOwl:hasDbXref>
     </owl:Axiom>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/SO_0001217 -->
@@ -2900,7 +2900,7 @@
         <oboInOwl:id>SO:0001217</oboInOwl:id>
         <rdfs:label>protein_coding_gene</rdfs:label>
     </owl:Class>
-    
+
 
 
     <!-- http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=10848 -->
@@ -2925,7 +2925,7 @@
         <owl:annotatedTarget>A protein coding gene SHH in human.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
     </owl:Axiom>
-    
+
 
 
     <!-- http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=11252 -->
@@ -2950,7 +2950,7 @@
         <owl:annotatedTarget>A protein coding gene SPON1 in human.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
     </owl:Axiom>
-    
+
 
 
     <!-- http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=11764 -->
@@ -2975,7 +2975,7 @@
         <owl:annotatedTarget>A protein coding gene TG in human.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
     </owl:Axiom>
-    
+
 
 
     <!-- http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=12765 -->
@@ -3000,7 +3000,7 @@
         <owl:annotatedTarget>A protein coding gene FOXN1 in human.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
     </owl:Axiom>
-    
+
 
 
     <!-- http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=1437 -->
@@ -3025,7 +3025,7 @@
         <owl:annotatedTarget>A protein coding gene CALCA in human.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
     </owl:Axiom>
-    
+
 
 
     <!-- http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=21998 -->
@@ -3050,7 +3050,7 @@
         <owl:annotatedTarget>A protein coding gene SSPO in human.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
     </owl:Axiom>
-    
+
 
 
     <!-- http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=3686 -->
@@ -3075,7 +3075,7 @@
         <owl:annotatedTarget>A protein coding gene FGF8 in human.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
     </owl:Axiom>
-    
+
 
 
     <!-- http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=6720 -->
@@ -3100,7 +3100,7 @@
         <owl:annotatedTarget>A protein coding gene LTF in human.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
     </owl:Axiom>
-    
+
 
 
     <!-- http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=6925 -->
@@ -3125,7 +3125,7 @@
         <owl:annotatedTarget>A protein coding gene MBP in human.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
     </owl:Axiom>
-    
+
 
 
     <!-- http://www.informatics.jax.org/marker/MGI:102949 -->
@@ -3150,7 +3150,7 @@
         <owl:annotatedTarget>A protein coding gene Foxn1 in mouse.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
     </owl:Axiom>
-    
+
 
 
     <!-- http://www.informatics.jax.org/marker/MGI:2151253 -->
@@ -3175,7 +3175,7 @@
         <owl:annotatedTarget>A protein coding gene Calca in mouse.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
     </owl:Axiom>
-    
+
 
 
     <!-- http://www.informatics.jax.org/marker/MGI:2385287 -->
@@ -3200,7 +3200,7 @@
         <owl:annotatedTarget>A protein coding gene Spon1 in mouse.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
     </owl:Axiom>
-    
+
 
 
     <!-- http://www.informatics.jax.org/marker/MGI:2674311 -->
@@ -3225,7 +3225,7 @@
         <owl:annotatedTarget>A protein coding gene Sspo in mouse.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
     </owl:Axiom>
-    
+
 
 
     <!-- http://www.informatics.jax.org/marker/MGI:96837 -->
@@ -3250,7 +3250,7 @@
         <owl:annotatedTarget>A protein coding gene Ltf in mouse.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
     </owl:Axiom>
-    
+
 
 
     <!-- http://www.informatics.jax.org/marker/MGI:96925 -->
@@ -3275,7 +3275,7 @@
         <owl:annotatedTarget>A protein coding gene Mbp in mouse.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
     </owl:Axiom>
-    
+
 
 
     <!-- http://www.informatics.jax.org/marker/MGI:98297 -->
@@ -3300,7 +3300,7 @@
         <owl:annotatedTarget>A protein coding gene Shh in mouse.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
     </owl:Axiom>
-    
+
 
 
     <!-- http://www.informatics.jax.org/marker/MGI:98733 -->
@@ -3325,7 +3325,7 @@
         <owl:annotatedTarget>A protein coding gene Tg in mouse.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
     </owl:Axiom>
-    
+
 
 
     <!-- http://www.informatics.jax.org/marker/MGI:99604 -->
@@ -3355,4 +3355,3 @@
 
 
 <!-- Generated by the OWL API (version 4.5.6) https://github.com/owlcs/owlapi -->
-
