@@ -40,7 +40,7 @@ jobs:
           echo $ROBOT_ENV
           cd src/ontology
           mkdir -p tmp reports mirror
-          make BRI=false MIR=false PAT=false IMP=false subsets/human-view.owl > TESTLOG.log
+          make ROBOT_ENV='ROBOT_JAVA_ARGS=-Xmx20G' BRI=false MIR=false PAT=false IMP=false subsets/human-view.owl > TESTLOG.log
           cat TESTLOG.log
           ll subsets
       - name: make step for main
@@ -49,6 +49,6 @@ jobs:
           echo $ROBOT_ENV
           cd ../../main/src/ontology
           mkdir -p tmp reports mirror
-          make BRI=false MIR=false PAT=false IMP=false subsets/human-view.owl > TESTLOG.log
+          make ROBOT_ENV='ROBOT_JAVA_ARGS=-Xmx20G' BRI=false MIR=false PAT=false IMP=false subsets/human-view.owl > TESTLOG.log
           cat TESTLOG.log
           ll subsets
