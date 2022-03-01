@@ -36,13 +36,7 @@ jobs:
           path: main
       - name: make step for branch
         if: env.STATUS == 1
-        run: |
-          echo $ROBOT_ENV
-          cd src/ontology
-          mkdir -p tmp reports mirror
-          make ROBOT_ENV='ROBOT_JAVA_ARGS=-Xmx20G' BRI=false MIR=false PAT=false IMP=false subsets/human-view.owl > TESTLOG.log
-          cat TESTLOG.log
-          ll subsets
+        run: cd src/ontology && mkdir -p tmp reports mirror && make ROBOT_ENV='ROBOT_JAVA_ARGS=-Xmx20G' BRI=false MIR=false PAT=false IMP=false subsets/human-view.owl > TESTLOG.log
       - name: Last rows of QC report
         if: ${{ failure() }}
         run: tail -20 src/ontology/TESTLOG.log
