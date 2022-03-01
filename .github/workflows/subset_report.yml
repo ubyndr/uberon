@@ -58,6 +58,7 @@ jobs:
           pwd
           ls -l
           cd main/src/ontology
+          ls -l
         # mkdir -p tmp reports mirror && make ROBOT_ENV='ROBOT_JAVA_ARGS=-Xmx20G' BRI=false MIR=false PAT=false IMP=false subsets/human-view.owl > TESTLOG.log
       - name: Last rows of QC report
         if: ${{ failure() }}
