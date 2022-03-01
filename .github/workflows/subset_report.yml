@@ -50,7 +50,7 @@ jobs:
         if: env.STATUS == 1
         run: |
           pwd
-          ls -l
+          ls
           "echo \"<details>\n <summary> Here's a diff of your *-view </summary> \n\" > view-comment.md; cat report.md >> view-comment.md"
       - name: post comment
         if: env.STATUS == 1
