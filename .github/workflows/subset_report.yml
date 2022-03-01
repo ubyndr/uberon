@@ -10,7 +10,7 @@ env:
 jobs:
   is_changed:
     runs-on: ubuntu-latest
-    container: obolibrary/odklite:v1.2.32
+    container: obolibrary/odkfull:v1.2.32
     steps:
       # Checks-out current branch
       - uses: actions/checkout@v2
