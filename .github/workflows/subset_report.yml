@@ -36,12 +36,14 @@ jobs:
           path: main
       - name: make step for branch
         if: env.STATUS == 1
+        run: echo branch
         #run: cd src/ontology && mkdir -p tmp reports mirror && make ROBOT_ENV='ROBOT_JAVA_ARGS=-Xmx20G' BRI=false MIR=false PAT=false IMP=false subsets/human-view.owl > TESTLOG.log
       - name: debugging branch
         if: ${{ failure() }}
         run: tail -20 src/ontology/TESTLOG.log
       - name: make step for main
         if: env.STATUS == 1
+        run: echo branch
         #run: cd main/src/ontology && mkdir -p tmp reports mirror && make ROBOT_ENV='ROBOT_JAVA_ARGS=-Xmx20G' BRI=false MIR=false PAT=false IMP=false subsets/human-view.owl > TESTLOG.log
       - name: debugging main
         if: ${{ failure() }}
