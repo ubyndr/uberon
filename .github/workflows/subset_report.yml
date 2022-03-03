@@ -36,29 +36,34 @@ jobs:
           path: main
       - name: make step for branch
         if: env.STATUS == 1
-        run: cd src/ontology && mkdir -p tmp reports mirror && make ROBOT_ENV='ROBOT_JAVA_ARGS=-Xmx20G' BRI=false MIR=false PAT=false IMP=false subsets/human-view.owl > TESTLOG.log
+        #run: cd src/ontology && mkdir -p tmp reports mirror && make ROBOT_ENV='ROBOT_JAVA_ARGS=-Xmx20G' BRI=false MIR=false PAT=false IMP=false subsets/human-view.owl > TESTLOG.log
       - name: debugging branch
         if: ${{ failure() }}
         run: tail -20 src/ontology/TESTLOG.log
       - name: make step for main
         if: env.STATUS == 1
-        run: cd main/src/ontology && mkdir -p tmp reports mirror && make ROBOT_ENV='ROBOT_JAVA_ARGS=-Xmx20G' BRI=false MIR=false PAT=false IMP=false subsets/human-view.owl > TESTLOG.log
+        #run: cd main/src/ontology && mkdir -p tmp reports mirror && make ROBOT_ENV='ROBOT_JAVA_ARGS=-Xmx20G' BRI=false MIR=false PAT=false IMP=false subsets/human-view.owl > TESTLOG.log
       - name: debugging main
         if: ${{ failure() }}
         run: tail -20 main/src/ontology/TESTLOG.log
       - name: prepare diff report
-        if: env.STATUS == 1
+        if: env.STATUS == 2
         run: robot diff --left src/ontology/subsets/human-view.owl --right main/src/ontology/subsets/human-view.owl -f markdown -o report.md
       - name: prepare comment
-        if: env.STATUS == 1
+        if: env.STATUS == 2
         run: |
           pwd
           ls
           "echo \"<details>\n <summary> Here's a diff of your *-view </summary> \n\" > view-comment.md; cat report.md >> view-comment.md"
       - name: post comment
-        if: env.STATUS == 1
+        if: env.STATUS == 2
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         uses: NejcZdovc/comment-pr@v1.1.1
         with:
           file: "../../view-comment.md"
+      - name: shell scripting
+        if: env.STATUS == 1
+        run: |
+          pwd
+          ls
