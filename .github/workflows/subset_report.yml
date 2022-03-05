@@ -20,7 +20,7 @@ jobs:
         if: ${{ github.event.pull_request.base.sha }}
         run: |
           git fetch origin main ${{ github.event.pull_request.base.sha }}
-          git diff @~ > gitdiff.md
+          git show > gitdiff.md
           cat gitdiff.md
           echo ::set-output name=diff::$(cat gitdiff.md)
       # Set Status to 0 to cancel the workflow' if keyword not in the diff file
