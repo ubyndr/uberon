@@ -9,7 +9,7 @@ env:
   STATUS: 1
 jobs:
   is_changed:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     container: obolibrary/odkfull:latest
     steps:
       # Checks-out current branch
@@ -38,14 +38,14 @@ jobs:
       - name: make step for branch
         if: env.STATUS == 1
         run: echo branch
-        #run: cd src/ontology && mkdir -p tmp reports mirror && make ROBOT_ENV='ROBOT_JAVA_ARGS=-Xmx20G' BRI=false MIR=false PAT=false IMP=false subsets/human-view.owl > TESTLOG.log
+        run: cd src/ontology && mkdir -p tmp reports mirror && make ROBOT_ENV='ROBOT_JAVA_ARGS=-Xmx20G' BRI=false MIR=false PAT=false IMP=false subsets/human-view.owl > TESTLOG.log
       - name: debugging branch
         if: ${{ failure() }}
         run: tail -20 src/ontology/TESTLOG.log
       - name: make step for main
         if: env.STATUS == 1
         run: echo branch
-        #run: cd main/src/ontology && mkdir -p tmp reports mirror && make ROBOT_ENV='ROBOT_JAVA_ARGS=-Xmx20G' BRI=false MIR=false PAT=false IMP=false subsets/human-view.owl > TESTLOG.log
+        run: cd main/src/ontology && mkdir -p tmp reports mirror && make ROBOT_ENV='ROBOT_JAVA_ARGS=-Xmx20G' BRI=false MIR=false PAT=false IMP=false subsets/human-view.owl > TESTLOG.log
       - name: debugging main
         if: ${{ failure() }}
         run: tail -20 main/src/ontology/TESTLOG.log
@@ -57,7 +57,7 @@ jobs:
         run: |
           pwd
           ls
-          "echo \"<details>\n <summary> Here's a diff of your *-view </summary> \n\" > view-comment.md; cat report.md >> view-comment.md"
+          echo "<details>   <summary> Here's a diff of your *-view </summary>   " > view-comment.md; cat report.md >> view-comment.md
       - name: post comment
         if: env.STATUS == 2
         env:
