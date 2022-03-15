@@ -10,8 +10,14 @@ env:
 jobs:
   is_changed:
     runs-on: macos-latest
-    container: obolibrary/odkfull:latest
+    # container: obolibrary/odkfull:latest
     steps:
+      - name: Install docker
+        run: |
+          brew install docker-machine docker
+          sudo docker –version
+      - name: Install ODK
+        run: docker pull obolibrary/odkfull
       # Checks-out current branch
       - uses: actions/checkout@v2
       # Checks-out main and prepare git diff report
@@ -37,19 +43,19 @@ jobs:
           path: main
       - name: make step for branch
         if: env.STATUS == 1
-        run: cd src/ontology && mkdir -p tmp reports mirror && make ROBOT_ENV='ROBOT_JAVA_ARGS=-Xmx20G' BRI=false MIR=false PAT=false IMP=false subsets/human-view.owl > TESTLOG.log
+        run: cd src/ontology && mkdir -p tmp reports mirror && docker run -e ROBOT_JAVA_ARGS='-Xmx25G' -e JAVA_OPTS='-Xmx25G' -v $PWD/:/work -w /work --rm -ti obolibrary/odkfull make ROBOT_ENV='ROBOT_JAVA_ARGS=-Xmx20G' BRI=false MIR=false PAT=false IMP=false subsets/human-view.owl > TESTLOG.log
       - name: debugging branch
         if: ${{ failure() }}
         run: tail -20 src/ontology/TESTLOG.log
       - name: make step for main
         if: env.STATUS == 1
-        run: cd main/src/ontology && mkdir -p tmp reports mirror && make ROBOT_ENV='ROBOT_JAVA_ARGS=-Xmx20G' BRI=false MIR=false PAT=false IMP=false subsets/human-view.owl > TESTLOG.log
+        run: cd main/src/ontology && mkdir -p tmp reports mirror && docker run -e ROBOT_JAVA_ARGS='-Xmx25G' -e JAVA_OPTS='-Xmx25G' -v $PWD/:/work -w /work --rm -ti obolibrary/odkfull make ROBOT_ENV='ROBOT_JAVA_ARGS=-Xmx20G' BRI=false MIR=false PAT=false IMP=false subsets/human-view.owl > TESTLOG.log
       - name: debugging main
         if: ${{ failure() }}
         run: tail -20 main/src/ontology/TESTLOG.log
       - name: prepare diff report
         if: env.STATUS == 2
-        run: robot diff --left src/ontology/subsets/human-view.owl --right main/src/ontology/subsets/human-view.owl -f markdown -o report.md
+        run: docker run -e ROBOT_JAVA_ARGS='-Xmx25G' -e JAVA_OPTS='-Xmx25G' -v $PWD/:/work -w /work --rm -ti obolibrary/odkfull robot diff --left src/ontology/subsets/human-view.owl --right main/src/ontology/subsets/human-view.owl -f markdown -o report.md
       - name: prepare comment
         if: env.STATUS == 2
         run: |
