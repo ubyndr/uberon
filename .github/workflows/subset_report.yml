@@ -13,9 +13,8 @@ jobs:
     # container: obolibrary/odkfull:latest
     steps:
       - name: Install docker
-        run: |
-          brew install docker-machine docker
-          docker –-version
+      - uses: docker-practice/actions-setup-docker@master
+        run: docker –-version
       - name: Install ODK
         run: docker pull obolibrary/odkfull
       # Checks-out current branch
