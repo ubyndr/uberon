@@ -14,9 +14,10 @@ jobs:
     steps:
       - name: Install docker
       - uses: docker-practice/actions-setup-docker@master
-        run: docker –-version
       - name: Install ODK
-        run: docker pull obolibrary/odkfull
+        run: |
+          docker –-version
+          docker pull obolibrary/odkfull
       # Checks-out current branch
       - uses: actions/checkout@v2
       # Checks-out main and prepare git diff report
