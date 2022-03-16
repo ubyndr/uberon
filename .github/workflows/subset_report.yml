@@ -23,10 +23,10 @@ jobs:
         if: ${{ github.event.pull_request.base.sha }}
         run: |
           pwd
-          ls
+          ls -l
           git fetch origin main ${{ github.event.pull_request.base.sha }}
-          PWD
-          ls
+          pwd
+          ls -l
           git diff ${{ github.event.pull_request.base.sha }} ${{ github.sha }} src/ontology/uberon-edit.obo > gitdiff.md
           cat gitdiff.md
           echo ::set-output name=diff::$(cat gitdiff.md)
@@ -44,13 +44,19 @@ jobs:
           path: main
       - name: make step for branch
         if: env.STATUS == 1
-        run: cd src/ontology && mkdir -p tmp reports mirror && docker run -v $PWD/../../:/work -w /work/src/ontology -e ROBOT_JAVA_ARGS='-Xmx20G' -e JAVA_OPTS='-Xmx20G' --rm obolibrary/odkfull $TIMECMD make BRI=false MIR=false PAT=false IMP=false subsets/human-view.owl > TESTLOG.log
+        run: |
+          ls -ls
+          echo $PWD
+          cd src/ontology && mkdir -p tmp reports mirror && docker run -v $PWD/../../:/work -w /work/src/ontology -e ROBOT_JAVA_ARGS='-Xmx20G' -e JAVA_OPTS='-Xmx20G' --rm obolibrary/odkfull $TIMECMD make BRI=false MIR=false PAT=false IMP=false subsets/human-view.owl > TESTLOG.log
       - name: debugging branch
         if: ${{ failure() }}
         run: tail -20 src/ontology/TESTLOG.log
       - name: make step for main
         if: env.STATUS == 1
-        run: cd main/src/ontology && mkdir -p tmp reports mirror && docker run -v $PWD/../../:/work -w /work/src/ontology -e ROBOT_JAVA_ARGS='-Xmx20G' -e JAVA_OPTS='-Xmx20G' --rm obolibrary/odkfull $TIMECMD make BRI=false MIR=false PAT=false IMP=false subsets/human-view.owl > TESTLOG.log
+        run: |
+          ls -ls
+          echo $PWD
+          cd main/src/ontology && mkdir -p tmp reports mirror && docker run -v $PWD/../../:/work -w /work/src/ontology -e ROBOT_JAVA_ARGS='-Xmx20G' -e JAVA_OPTS='-Xmx20G' --rm obolibrary/odkfull $TIMECMD make BRI=false MIR=false PAT=false IMP=false subsets/human-view.owl > TESTLOG.log
       - name: debugging main
         if: ${{ failure() }}
         run: tail -20 main/src/ontology/TESTLOG.log
