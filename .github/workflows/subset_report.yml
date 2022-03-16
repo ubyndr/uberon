@@ -64,7 +64,7 @@ jobs:
         if: env.STATUS == 2
         run: |
           pwd
-          ls
+          ls -l
           echo "<details>   <summary> Here's a diff of your *-view </summary>   " > view-comment.md; cat src/ontology/report.md >> view-comment.md
       - name: post comment
         if: env.STATUS == 2
@@ -76,4 +76,4 @@ jobs:
       - name: shell scripting
         run: |
           pwd
-          ls
+          ls -l
