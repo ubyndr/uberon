@@ -22,7 +22,11 @@ jobs:
         id: gitdiff
         if: ${{ github.event.pull_request.base.sha }}
         run: |
+          pwd
+          ls
           git fetch origin main ${{ github.event.pull_request.base.sha }}
+          PWD
+          ls
           git diff ${{ github.event.pull_request.base.sha }} ${{ github.sha }} src/uberon-edit.obo > gitdiff.md
           cat gitdiff.md
           echo ::set-output name=diff::$(cat gitdiff.md)
