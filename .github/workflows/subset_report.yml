@@ -15,7 +15,7 @@ jobs:
       - uses: docker-practice/actions-setup-docker@master
       - name: Install ODK
         run: |
-          docker –-version
+          docker –-help
           docker pull obolibrary/odkfull
       # Checks-out current branch
       - uses: actions/checkout@v2
