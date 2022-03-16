@@ -44,25 +44,28 @@ jobs:
           path: main
       - name: make step for branch
         if: env.STATUS == 1
-        run: cd src/ontology && mkdir -p tmp reports mirror && docker run -e ROBOT_JAVA_ARGS='-Xmx25G' -e JAVA_OPTS='-Xmx25G' -v $PWD/:/work -w /work --rm obolibrary/odkfull make BRI=false MIR=false PAT=false IMP=false subsets/human-view.owl > TESTLOG.log
+        run: cd src/ontology && mkdir -p tmp reports mirror && sh run.sh make BRI=false MIR=false PAT=false IMP=false subsets/human-view.owl > TESTLOG.log
       - name: debugging branch
         if: ${{ failure() }}
         run: tail -20 src/ontology/TESTLOG.log
       - name: make step for main
         if: env.STATUS == 1
-        run: cd main/src/ontology && mkdir -p tmp reports mirror && docker run -e ROBOT_JAVA_ARGS='-Xmx25G' -e JAVA_OPTS='-Xmx25G' -v $PWD/:/work -w /work --rm obolibrary/odkfull make BRI=false MIR=false PAT=false IMP=false subsets/human-view.owl > TESTLOG.log
+        run: cd main/src/ontology && mkdir -p tmp reports mirror && sh run.sh make BRI=false MIR=false PAT=false IMP=false subsets/human-view.owl > TESTLOG.log
       - name: debugging main
         if: ${{ failure() }}
         run: tail -20 main/src/ontology/TESTLOG.log
       - name: prepare diff report
         if: env.STATUS == 2
-        run: docker run -e ROBOT_JAVA_ARGS='-Xmx25G' -e JAVA_OPTS='-Xmx25G' -v $PWD/:/work -w /work --rm -ti obolibrary/odkfull robot diff --left src/ontology/subsets/human-view.owl --right main/src/ontology/subsets/human-view.owl -f markdown -o report.md
+        run: |
+          pwd
+          ls -l
+          cd src/ontology $$ sh run.sh robot diff --left subsets/human-view.owl --right ../../main/src/ontology/subsets/human-view.owl -f markdown -o report.md
       - name: prepare comment
         if: env.STATUS == 2
         run: |
           pwd
           ls
-          echo "<details>   <summary> Here's a diff of your *-view </summary>   " > view-comment.md; cat report.md >> view-comment.md
+          echo "<details>   <summary> Here's a diff of your *-view </summary>   " > view-comment.md; cat src/ontology/report.md >> view-comment.md
       - name: post comment
         if: env.STATUS == 2
         env:
