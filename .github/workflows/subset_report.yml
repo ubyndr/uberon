@@ -61,19 +61,19 @@ jobs:
         if: ${{ failure() }}
         run: tail -20 main/src/ontology/TESTLOG.log
       - name: prepare diff report
-        if: env.STATUS == 2
+        if: env.STATUS == 1
         run: |
           pwd
           ls -l
           cd src/ontology $$ docker run -v $PWD/../../:/work -w /work/src/ontology -e ROBOT_JAVA_ARGS='-Xmx9G' -e JAVA_OPTS='-Xmx9G' --rm obolibrary/odkfull $TIMECMD robot diff --left subsets/human-view.owl --right ../../main/src/ontology/subsets/human-view.owl -f markdown -o report.md
       - name: prepare comment
-        if: env.STATUS == 2
+        if: env.STATUS == 1
         run: |
           pwd
           ls -l
           echo "<details>   <summary> Here's a diff of your *-view </summary>   " > view-comment.md; cat src/ontology/report.md >> view-comment.md
       - name: post comment
-        if: env.STATUS == 2
+        if: env.STATUS == 1
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         uses: NejcZdovc/comment-pr@v1.1.1
