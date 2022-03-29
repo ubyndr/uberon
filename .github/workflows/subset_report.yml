@@ -64,7 +64,3 @@ jobs:
         uses: NejcZdovc/comment-pr@v1.1.1
         with:
           file: "../../view-comment.md"
-      - name: shell scripting
-        run: |
-          pwd
-          ls -l
