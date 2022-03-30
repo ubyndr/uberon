@@ -21,7 +21,7 @@ jobs:
       - name: create git diff
         id: gitdiff
         if: ${{ github.event.pull_request.base.sha }}
-        run:
+        run: |
           git fetch origin main ${{ github.event.pull_request.base.sha }}
           ls -l
           git diff ${{ github.event.pull_request.base.sha }} ${{ github.sha }} src/ontology/uberon-edit.obo > gitdiff.md
