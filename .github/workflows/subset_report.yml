@@ -59,9 +59,11 @@ jobs:
           ls -l src/ontology/subsets/
           echo 'main'
           ls -l main/src/ontology/subsets/
-          cd src/ontology $$ docker run -v $PWD/../../:/work -w /work/src/ontology -e ROBOT_JAVA_ARGS='-Xmx9G' -e JAVA_OPTS='-Xmx9G' --rm obolibrary/odkfull $TIMECMD robot diff --left subsets/human-view.owl --right ../../main/src/ontology/subsets/human-view.owl -f markdown -o report.md
+          cd src/ontology
+          docker run -v $PWD/../../:/work -w /work/src/ontology -e ROBOT_JAVA_ARGS='-Xmx9G' -e JAVA_OPTS='-Xmx9G' --rm obolibrary/odkfull $TIMECMD robot diff --left subsets/human-view.owl --right ../../main/src/ontology/subsets/human-view.owl -f markdown -o report.md
           pwd
           ls -l
+          echo 'report.md'
           cat report.md
       - name: prepare comment
         if: env.STATUS == 1
