@@ -67,8 +67,9 @@ jobs:
           pwd
           ls -l src/ontology/
           echo "<details>   <summary> Here's a diff of your *-view </summary>   " > view-comment.md; cat src/ontology/report.md >> view-comment.md
+          ls -l
       - name: post comment
-        if: env.STATUS == 2
+        if: env.STATUS == 1
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         uses: NejcZdovc/comment-pr@v1.1.1
