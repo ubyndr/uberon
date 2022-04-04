@@ -63,7 +63,6 @@ jobs:
       - name: prepare comment
         if: env.STATUS == 1
         run: |
-          pwd
           ls -l src/ontology/
           echo "<details>   <summary> Here's a diff of your human-view </summary>   " > view-comment.md; cat src/ontology/human-report.md >> view-comment.md
           wc -l view-comment.md
