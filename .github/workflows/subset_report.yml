@@ -65,7 +65,7 @@ jobs:
           ls -l src/ontology/
           echo "<details>   <summary> Here's a diff of your human-view </summary>   " > view-comment.md; cat src/ontology/human-report.md >> view-comment.md
           wc -l view-comment.md
-          echo "<details>   <summary> Here's a diff of your mouse-view </summary>   " >> view-comment.md; cat src/ontology/mouse-report.md >> view-comment.md
+          echo "</details><details>   <summary> Here's a diff of your mouse-view </summary>   " >> view-comment.md; cat src/ontology/mouse-report.md >> view-comment.md
           wc -l view-comment.md
           ls -l
       - name: post comment
