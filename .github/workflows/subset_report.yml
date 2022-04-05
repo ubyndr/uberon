@@ -13,6 +13,9 @@ jobs:
     # container: obolibrary/odkfull:latest
     steps:
       - uses: docker-practice/actions-setup-docker@master
+      - run: |
+        set -x
+        docker version
       - name: Install ODK
         run: docker pull obolibrary/odklite
       # Checks-out current branch
