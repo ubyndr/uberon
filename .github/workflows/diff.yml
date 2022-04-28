@@ -38,7 +38,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: edit-diff.md
-          path: edit-diff.md
+          path: src/ontology/edit-diff.md
       - name: Make step for branch
         run: cd src/ontology && mkdir -p tmp reports mirror && docker run -v $PWD/../../:/work -w /work/src/ontology -e ROBOT_JAVA_ARGS='-Xmx9G' -e JAVA_OPTS='-Xmx9G' --rm obolibrary/odklite make BRI=false MIR=false PAT=false IMP=false uberon-simple.owl > TESTLOG.log
       - name: Make step for main
@@ -53,7 +53,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: simple-report.md
-          path: simple-report.md
+          path: src/ontology/simple-report.md
   post_comment:
     needs: [diff-reports]
     runs-on: ubuntu-latest
@@ -63,9 +63,12 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: simple-report.md
-          path: simple-report
+      - name: download check
+        run: |
+          pwd
+          ls -l
       - name: Prepare reasoned comment
-        run: "echo \"<details>\n <summary> Here's a diff of how these changes impact the classified ontology (on -simple file): </summary> \n\" > comment.md; cat simple-report.md/simple-report.md >> comment.md"
+        run: "echo \"<details>\n <summary> Here's a diff of how these changes impact the classified ontology (on -simple file): </summary> \n\" > comment.md; cat simple-report.md >> comment.md"
       - name: Post reasoned comment
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
@@ -78,9 +81,12 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: edit-diff.md
-          path: edit-diff.md
+      - name: download check
+        run: |
+          pwd
+          ls -l
       - name: Prepare edit file comment
-        run: "echo \"<details>\n <summary> Here's a diff of your edit file (unreasoned) </summary> \n\" > edit-comment.md; cat edit-diff.md/edit-diff.md >> edit-comment.md"
+        run: "echo \"<details>\n <summary> Here's a diff of your edit file (unreasoned) </summary> \n\" > edit-comment.md; cat edit-diff.md >> edit-comment.md"
       - name: Post comment
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
