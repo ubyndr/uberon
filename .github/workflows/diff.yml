@@ -29,7 +29,10 @@ jobs:
           ref: main
           path: master
       - name: Diff classification
-        run: docker run -v $PWD/../../:/work -w /work/src/ontology -e ROBOT_JAVA_ARGS='-Xmx9G' -e JAVA_OPTS='-Xmx9G' --rm obolibrary/odklite robot diff --left uberon-edit.obo --right ../../master/src/ontology/uberon-edit.obo -f markdown -o edit-diff.md
+        run: |
+          ls -l
+          cd src/ontology
+          docker run -v $PWD/../../:/work -w /work/src/ontology -e ROBOT_JAVA_ARGS='-Xmx9G' -e JAVA_OPTS='-Xmx9G' --rm obolibrary/odklite robot diff --left uberon-edit.obo --right ../../master/src/ontology/uberon-edit.obo -f markdown -o edit-diff.md
       - name: Upload diff
         uses: actions/upload-artifact@v2
         with:
@@ -84,4 +87,3 @@ jobs:
         with:
           file: "../../edit-comment.md"
           identifier: "UNREASONED"
-
