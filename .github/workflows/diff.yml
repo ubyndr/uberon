@@ -41,12 +41,12 @@ jobs:
       - name: Make step for branch
         run: cd src/ontology && mkdir -p tmp reports mirror && docker run -v $PWD/../../:/work -w /work/src/ontology -e ROBOT_JAVA_ARGS='-Xmx9G' -e JAVA_OPTS='-Xmx9G' --rm obolibrary/odklite make BRI=false MIR=false PAT=false IMP=false uberon-simple.owl > TESTLOG.log
       - name: Make step for main
-        run: cd main/src/ontology && mkdir -p tmp reports mirror && docker run -v $PWD/../../:/work -w /work/src/ontology -e ROBOT_JAVA_ARGS='-Xmx9G' -e JAVA_OPTS='-Xmx9G' --rm obolibrary/odklite make BRI=false MIR=false PAT=false IMP=false uberon-simple.owl > TESTLOG.log
+        run: cd master/src/ontology && mkdir -p tmp reports mirror && docker run -v $PWD/../../:/work -w /work/src/ontology -e ROBOT_JAVA_ARGS='-Xmx9G' -e JAVA_OPTS='-Xmx9G' --rm obolibrary/odklite make BRI=false MIR=false PAT=false IMP=false uberon-simple.owl > TESTLOG.log
       - name: Diff report
         run: |
           cd src/ontology
           ls -l
-          docker run -v $PWD/../../:/work -w /work/src/ontology -e ROBOT_JAVA_ARGS='-Xmx9G' -e JAVA_OPTS='-Xmx9G' --rm obolibrary/odklite robot diff --left uberon-simple.owl --right ../../main/src/ontology/uberon-simple.owl -f markdown -o simple-report.md
+          docker run -v $PWD/../../:/work -w /work/src/ontology -e ROBOT_JAVA_ARGS='-Xmx9G' -e JAVA_OPTS='-Xmx9G' --rm obolibrary/odklite robot diff --left uberon-simple.owl --right ../../master/src/ontology/uberon-simple.owl -f markdown -o simple-report.md
           ls -l
       - name: Upload diff
         uses: actions/upload-artifact@v2
