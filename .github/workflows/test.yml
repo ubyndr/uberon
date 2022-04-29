@@ -1,0 +1,19 @@
+name: 'Contains test'
+on:
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+env:
+  STATUS: 1
+jobs:
+  is_changed:
+    runs-on: macos-latest
+    # container: obolibrary/odkfull:latest
+    steps:
+      # Set Status to 0 to cancel the workflow' if keyword not in the diff file
+      - name: conditional cancel
+        if: "!contains('in_taxon never_in_taxon only_in_taxon present_in_taxon', 'mahmut') && !contains('in_taxon never_in_taxon only_in_taxon present_in_taxon', 'present_in_taxon')"
+        run: |
+          echo Taxon constraint updates do not exist
+          echo "STATUS=0" >> $GITHUB_ENV
+      # Checks-out main branch under "main" directory
