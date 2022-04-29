@@ -30,10 +30,8 @@ jobs:
           path: master
       - name: Diff classification
         run: |
-          ls -l
           cd src/ontology
           docker run -v $PWD/../../:/work -w /work/src/ontology -e ROBOT_JAVA_ARGS='-Xmx9G' -e JAVA_OPTS='-Xmx9G' --rm obolibrary/odklite robot diff --left uberon-edit.obo --left-catalog catalog-v001.xml --right ../../master/src/ontology/uberon-edit.obo --right-catalog ../../master/src/ontology/catalog-v001.xml -f markdown -o edit-diff.md
-          ls -l
       - name: Upload diff
         uses: actions/upload-artifact@v2
         with:
@@ -46,9 +44,7 @@ jobs:
       - name: Diff report
         run: |
           cd src/ontology
-          ls -l
           docker run -v $PWD/../../:/work -w /work/src/ontology -e ROBOT_JAVA_ARGS='-Xmx9G' -e JAVA_OPTS='-Xmx9G' --rm obolibrary/odklite robot diff --left uberon-simple.owl --left-catalog catalog-v001.xml --right ../../master/src/ontology/uberon-simple.owl --right-catalog ../../master/src/ontology/catalog-v001.xml -f markdown -o simple-report.md
-          ls -l
       - name: Upload diff
         uses: actions/upload-artifact@v2
         with:
@@ -63,10 +59,6 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: simple-report.md
-      - name: download check
-        run: |
-          pwd
-          ls -l
       - name: Prepare reasoned comment
         run: "echo \"<details>\n <summary> Here's a diff of how these changes impact the classified ontology (on -simple file): </summary> \n\" > comment.md; cat simple-report.md >> comment.md"
       - name: Post reasoned comment
@@ -81,10 +73,6 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: edit-diff.md
-      - name: download check
-        run: |
-          pwd
-          ls -l
       - name: Prepare edit file comment
         run: "echo \"<details>\n <summary> Here's a diff of your edit file (unreasoned) </summary> \n\" > edit-comment.md; cat edit-diff.md >> edit-comment.md"
       - name: Post comment
