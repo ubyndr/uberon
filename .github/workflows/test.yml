@@ -12,7 +12,7 @@ jobs:
     steps:
       # Set Status to 0 to cancel the workflow' if keyword not in the diff file
       - name: conditional cancel
-        if: "!contains('in_taxon never_in_taxon only_in_taxon present_in_taxon', 'mahmut') && !contains('in_taxon never_in_taxon only_in_taxon present_in_taxon', 'present_in_taxon')"
+        if: "!contains('in_taxon never_in_taxon only_in_taxon present_in_taxon', 'mahmut') && !contains('in_taxon never_in_taxon only_in_taxon present_in_taxon', 'ahmet')"
         run: |
           echo Taxon constraint updates do not exist
           echo "STATUS=0" >> $GITHUB_ENV
