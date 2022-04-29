@@ -3,7 +3,7 @@ name: 'Create ROBOT diffs on Pull requests'
 on:
   # Triggers the workflow on pull request events for the master branch
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
     paths:
       - 'src/ontology/uberon-edit.obo'
 
