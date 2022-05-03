@@ -14,6 +14,10 @@ jobs:
     steps:
       # Checks-out current branch
       - uses: actions/checkout@v2
+      - name: check path
+        run: |
+          pwd
+          ls -l
       # Checks-out main and prepare git diff report
       - name: create git diff
         id: gitdiff
