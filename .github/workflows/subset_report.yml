@@ -38,7 +38,7 @@ jobs:
         if: env.STATUS == 1
       - name: docker test
         if: env.STATUS == 1
-      - run: |
+        run: |
           set -x
           docker version
       - name: Install ODK
