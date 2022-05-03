@@ -36,6 +36,8 @@ jobs:
           echo "STATUS=0" >> $GITHUB_ENV
       - uses: docker-practice/actions-setup-docker@1.0.9
         if: env.STATUS == 1
+      - name: docker test
+        if: env.STATUS == 1
       - run: |
           set -x
           docker version
