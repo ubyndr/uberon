@@ -12,6 +12,12 @@ jobs:
     runs-on: macos-latest
     # container: obolibrary/odkfull:latest
     steps:
+      - uses: docker-practice/actions-setup-docker@master
+      - run: |
+          set -x
+          docker version
+      - name: Install ODK
+        run: docker pull obolibrary/odklite
       # Checks-out current branch
       - uses: actions/checkout@v2
       # Checks-out main and prepare git diff report
