@@ -34,7 +34,7 @@ jobs:
         run: |
           echo Taxon constraint updates do not exist
           echo "STATUS=0" >> $GITHUB_ENV
-      - uses: docker-practice/actions-setup-docker@1.0.9
+      - uses: docker-practice/actions-setup-docker@1.0.8
         if: env.STATUS == 1
       - name: docker test
         if: env.STATUS == 1
