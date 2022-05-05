@@ -15,7 +15,7 @@ jobs:
   diff-reports:
     runs-on: macos-latest
     steps:
-      - uses: docker-practice/actions-setup-docker@v1.0.8
+      - uses: docker-practice/actions-setup-docker@1.0.8
       - run: |
           set -x
           docker version
