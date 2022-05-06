@@ -12,6 +12,15 @@ jobs:
     runs-on: macos-latest
     # container: obolibrary/odkfull:latest
     steps:
+      - uses: docker-practice/actions-setup-docker@1.0.8
+      - name: docker test
+        run: |
+          set -x
+          docker version
+      - name: Install ODK
+        run: docker pull obolibrary/odklite
+      - name: check path
+        run: pwd
       # Checks-out current branch
       - uses: actions/checkout@v2
       - name: check path
@@ -34,18 +43,6 @@ jobs:
         run: |
           echo Taxon constraint updates do not exist
           echo "STATUS=0" >> $GITHUB_ENV
-      - uses: docker-practice/actions-setup-docker@1.0.8
-        if: env.STATUS == 1
-      - name: docker test
-        if: env.STATUS == 1
-        run: |
-          set -x
-          docker version
-      - name: Install ODK
-        if: env.STATUS == 1
-        run: docker pull obolibrary/odklite
-      - name: check path
-        run: pwd
       # Checks-out main branch under "main" directory
       - uses: actions/checkout@v2
         if: env.STATUS == 1
@@ -54,19 +51,13 @@ jobs:
           path: main
       - name: make step for branch
         if: env.STATUS == 1
-        run: |
-          cd src/ontology && mkdir -p tmp reports mirror && docker run -v $PWD/../../:/work -w /work/src/ontology -e ROBOT_JAVA_ARGS='-Xmx10G' -e JAVA_OPTS='-Xmx10G' --rm obolibrary/odklite make BRI=false MIR=false PAT=false IMP=false subsets/human-view.owl > TESTLOG.log
-          docker run -v $PWD/../../:/work -w /work/src/ontology -e ROBOT_JAVA_ARGS='-Xmx10G' -e JAVA_OPTS='-Xmx10G' --rm obolibrary/odklite make BRI=false MIR=false PAT=false IMP=false subsets/mouse-view.owl > TESTLOG.log
-          pwd
+        run: cd src/ontology && mkdir -p tmp reports mirror && docker run -v $PWD/../../:/work -w /work/src/ontology -e ROBOT_JAVA_ARGS='-Xmx10G' -e JAVA_OPTS='-Xmx10G' --rm obolibrary/odklite make BRI=false MIR=false PAT=false IMP=false subsets/human-view.owl subsets/mouse-view.owl > TESTLOG.log
       - name: debugging branch
         if: ${{ failure() }}
         run: tail -20 src/ontology/TESTLOG.log
       - name: make step for main
         if: env.STATUS == 1
-        run: |
-          pwd
-          cd main/src/ontology && mkdir -p tmp reports mirror && docker run -v $PWD/../../:/work -w /work/src/ontology -e ROBOT_JAVA_ARGS='-Xmx10G' -e JAVA_OPTS='-Xmx10G' --rm obolibrary/odklite make BRI=false MIR=false PAT=false IMP=false subsets/human-view.owl > TESTLOG.log
-          docker run -v $PWD/../../:/work -w /work/src/ontology -e ROBOT_JAVA_ARGS='-Xmx10G' -e JAVA_OPTS='-Xmx10G' --rm obolibrary/odklite make BRI=false MIR=false PAT=false IMP=false subsets/mouse-view.owl > TESTLOG.log
+        run: cd main/src/ontology && mkdir -p tmp reports mirror && docker run -v $PWD/../../:/work -w /work/src/ontology -e ROBOT_JAVA_ARGS='-Xmx10G' -e JAVA_OPTS='-Xmx10G' --rm obolibrary/odklite make BRI=false MIR=false PAT=false IMP=false subsets/human-view.owl subsets/mouse-view.owl > TESTLOG.log
       - name: debugging main
         if: ${{ failure() }}
         run: tail -20 main/src/ontology/TESTLOG.log
