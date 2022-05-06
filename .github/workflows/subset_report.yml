@@ -54,13 +54,19 @@ jobs:
           path: main
       - name: make step for branch
         if: env.STATUS == 1
-        run: cd src/ontology && mkdir -p tmp reports mirror && docker run -v $PWD/../../:/work -w /work/src/ontology -e ROBOT_JAVA_ARGS='-Xmx10G' -e JAVA_OPTS='-Xmx10G' --rm obolibrary/odklite make BRI=false MIR=false PAT=false IMP=false subsets/human-view.owl subsets/mouse-view.owl > TESTLOG.log
+        run: |
+          cd src/ontology && mkdir -p tmp reports mirror && docker run -v $PWD/../../:/work -w /work/src/ontology -e ROBOT_JAVA_ARGS='-Xmx10G' -e JAVA_OPTS='-Xmx10G' --rm obolibrary/odklite make BRI=false MIR=false PAT=false IMP=false subsets/human-view.owl > TESTLOG.log
+          docker run -v $PWD/../../:/work -w /work/src/ontology -e ROBOT_JAVA_ARGS='-Xmx10G' -e JAVA_OPTS='-Xmx10G' --rm obolibrary/odklite make BRI=false MIR=false PAT=false IMP=false subsets/mouse-view.owl > TESTLOG.log
+          pwd
       - name: debugging branch
         if: ${{ failure() }}
         run: tail -20 src/ontology/TESTLOG.log
       - name: make step for main
         if: env.STATUS == 1
-        run: cd main/src/ontology && mkdir -p tmp reports mirror && docker run -v $PWD/../../:/work -w /work/src/ontology -e ROBOT_JAVA_ARGS='-Xmx10G' -e JAVA_OPTS='-Xmx10G' --rm obolibrary/odklite make BRI=false MIR=false PAT=false IMP=false subsets/human-view.owl subsets/mouse-view.owl > TESTLOG.log
+        run: |
+          pwd
+          cd main/src/ontology && mkdir -p tmp reports mirror && docker run -v $PWD/../../:/work -w /work/src/ontology -e ROBOT_JAVA_ARGS='-Xmx10G' -e JAVA_OPTS='-Xmx10G' --rm obolibrary/odklite make BRI=false MIR=false PAT=false IMP=false subsets/human-view.owl > TESTLOG.log
+          docker run -v $PWD/../../:/work -w /work/src/ontology -e ROBOT_JAVA_ARGS='-Xmx10G' -e JAVA_OPTS='-Xmx10G' --rm obolibrary/odklite make BRI=false MIR=false PAT=false IMP=false subsets/mouse-view.owl > TESTLOG.log
       - name: debugging main
         if: ${{ failure() }}
         run: tail -20 main/src/ontology/TESTLOG.log
