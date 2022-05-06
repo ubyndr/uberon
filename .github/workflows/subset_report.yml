@@ -12,7 +12,7 @@ jobs:
     runs-on: macos-latest
     # container: obolibrary/odkfull:latest
     steps:
-      - uses: docker-practice/actions-setup-docker@1.0.8
+      - uses: docker-practice/actions-setup-docker@v1
       - name: docker test
         run: |
           set -x
