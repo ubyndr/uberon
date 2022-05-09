@@ -17,10 +17,6 @@ jobs:
         run: |
           set -x
           docker version
-      - name: Install ODK
-        run: docker pull obolibrary/odklite
-      - name: check path
-        run: pwd
       # Checks-out current branch
       - uses: actions/checkout@v2
       - name: check path
@@ -44,6 +40,9 @@ jobs:
           echo Taxon constraint updates do not exist
           echo "STATUS=0" >> $GITHUB_ENV
       # Checks-out main branch under "main" directory
+      - name: Install ODK
+        if: env.STATUS == 1
+        run: docker pull obolibrary/odklite
       - uses: actions/checkout@v2
         if: env.STATUS == 1
         with:
