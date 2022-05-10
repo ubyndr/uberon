@@ -12,11 +12,6 @@ jobs:
     runs-on: macos-latest
     # container: obolibrary/odkfull:latest
     steps:
-      - uses: docker-practice/actions-setup-docker@1.0.9
-      - name: docker test
-        run: |
-          set -x
-          docker version
       # Checks-out current branch
       - uses: actions/checkout@v2
       - name: check path
@@ -39,10 +34,17 @@ jobs:
         run: |
           echo Taxon constraint updates do not exist
           echo "STATUS=0" >> $GITHUB_ENV
-      # Checks-out main branch under "main" directory
+      - uses: docker-practice/actions-setup-docker@1.0.9
+        if: env.STATUS == 1
+      - name: docker test
+        if: env.STATUS == 1
+        run: |
+          set -x
+          docker version
       - name: Install ODK
         if: env.STATUS == 1
         run: docker pull obolibrary/odklite
+        # Checks-out main branch under "main" directory
       - uses: actions/checkout@v2
         if: env.STATUS == 1
         with:
