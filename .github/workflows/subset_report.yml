@@ -7,6 +7,9 @@ on:
   workflow_dispatch:
 env:
   STATUS: 1
+concurrency:
+  group: environment-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
   is_changed:
     runs-on: macos-latest

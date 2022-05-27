@@ -10,15 +10,26 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+concurrency:
+  group: environment-${{ github.ref }}
+  cancel-in-progress: true
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   diff-reports:
     runs-on: macos-latest
     steps:
-      - uses: docker-practice/actions-setup-docker@v1
-      - run: |
-          set -x
-          docker version
+      # - uses: docker-practice/actions-setup-docker@v1
+      # - run: |
+      #     set -x
+      #     docker version
+      - name: Install docker - MacOS
+        run: |
+          /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+          brew install --cask docker
+          sudo /Applications/Docker.app/Contents/MacOS/Docker --unattended --install-privileged-components
+          open -a /Applications/Docker.app --args --unattended --accept-license
+          while ! /Applications/Docker.app/Contents/Resources/bin/docker info &>/dev/null; do sleep 1; done
+          docker --version
       - name: Install ODK
         run: docker pull obolibrary/odklite
       # Checks-out current branch
