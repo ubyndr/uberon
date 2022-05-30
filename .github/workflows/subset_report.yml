@@ -7,11 +7,23 @@ on:
   workflow_dispatch:
 env:
   STATUS: 1
+concurrency:
+  group: environment-${{ github.ref }}
+  # cancel-in-progress: true
 jobs:
   is_changed:
     runs-on: macos-latest
     # container: obolibrary/odkfull:latest
     steps:
+      - name: Install docker - MacOS
+        # if: env.STATUS == 1
+        run: |
+          /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+          brew install --cask docker
+          sudo /Applications/Docker.app/Contents/MacOS/Docker --unattended --install-privileged-components
+          open -a /Applications/Docker.app --args --unattended --accept-license
+          while ! /Applications/Docker.app/Contents/Resources/bin/docker info &>/dev/null; do sleep 1; done
+          docker --version
       # Checks-out current branch
       - uses: actions/checkout@v2
       - name: check path
@@ -23,6 +35,8 @@ jobs:
         id: gitdiff
         if: ${{ github.event.pull_request.base.sha }}
         run: |
+          echo ${{ github.sha }}
+          echo ${{ github.event.pull_request.base.sha }}
           git fetch origin main ${{ github.event.pull_request.base.sha }}
           ls -l
           git diff ${{ github.event.pull_request.base.sha }} ${{ github.sha }} src/ontology/uberon-edit.obo > gitdiff.md
@@ -34,19 +48,17 @@ jobs:
         run: |
           echo Taxon constraint updates do not exist
           echo "STATUS=0" >> $GITHUB_ENV
-      - uses: docker-practice/actions-setup-docker@1.0.8
-        if: env.STATUS == 1
-      - name: docker test
-        if: env.STATUS == 1
-        run: |
-          set -x
-          docker version
+      # - uses: docker-practice/actions-setup-docker@1.0.9
+      #   if: env.STATUS == 1
+      # - name: docker test
+      #   if: env.STATUS == 1
+      #   run: |
+      #     set -x
+      #     docker version
       - name: Install ODK
         if: env.STATUS == 1
         run: docker pull obolibrary/odklite
-      - name: check path
-        run: pwd
-      # Checks-out main branch under "main" directory
+        # Checks-out main branch under "main" directory
       - uses: actions/checkout@v2
         if: env.STATUS == 1
         with:
