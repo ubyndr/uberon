@@ -15,6 +15,15 @@ jobs:
     runs-on: macos-latest
     # container: obolibrary/odkfull:latest
     steps:
+      - name: Install docker - MacOS
+        # if: env.STATUS == 1
+        run: |
+          /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+          brew install --cask docker
+          sudo /Applications/Docker.app/Contents/MacOS/Docker --unattended --install-privileged-components
+          open -a /Applications/Docker.app --args --unattended --accept-license
+          while ! /Applications/Docker.app/Contents/Resources/bin/docker info &>/dev/null; do sleep 1; done
+          docker --version
       # Checks-out current branch
       - uses: actions/checkout@v2
       - name: check path
@@ -39,15 +48,6 @@ jobs:
         run: |
           echo Taxon constraint updates do not exist
           echo "STATUS=0" >> $GITHUB_ENV
-      - name: Install docker - MacOS
-        if: env.STATUS == 1
-        run: |
-          /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-          brew install --cask docker
-          sudo /Applications/Docker.app/Contents/MacOS/Docker --unattended --install-privileged-components
-          open -a /Applications/Docker.app --args --unattended --accept-license
-          while ! /Applications/Docker.app/Contents/Resources/bin/docker info &>/dev/null; do sleep 1; done
-          docker --version
       # - uses: docker-practice/actions-setup-docker@1.0.9
       #   if: env.STATUS == 1
       # - name: docker test
